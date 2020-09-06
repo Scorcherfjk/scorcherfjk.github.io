@@ -59,3 +59,10 @@ Programming teacher and software developer. Passionate about web technologies, m
 #### Cloud
 
 ![Google Cloud Platform](https://img.shields.io/badge/-GCP-040d04?style=flat-square&logo=google-cloud)
+
+### Projects
+
+Some project deployed on Github pages.
+
+- To do list made only with Vue.js &#x279c; [To Do App](https://scorcherfjk.github.io/ToDoListVue/) 
+- Game/WebApp made with Vue.js & Tailwind.css &#x279c; [Game](https://scorcherfjk.github.io/juego-seleccion/)
