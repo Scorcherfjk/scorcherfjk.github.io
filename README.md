@@ -7,6 +7,8 @@ Programming teacher and software developer. Passionate about web technologies, m
 - 💬 Ask me about web technologies and machine learning
 - 📫 How to reach me: [@fjdfreitas](https://twitter.com/fjdfreitas)
 
+## Skills
+
 #### Programming Languages
 
 ![JavaScript](https://img.shields.io/badge/-Javascript-040d04?style=flat-square&logo=javascript)
@@ -60,7 +62,7 @@ Programming teacher and software developer. Passionate about web technologies, m
 
 ![Google Cloud Platform](https://img.shields.io/badge/-GCP-040d04?style=flat-square&logo=google-cloud)
 
-### Projects
+## Projects
 
 Some project deployed on Github pages.
 
