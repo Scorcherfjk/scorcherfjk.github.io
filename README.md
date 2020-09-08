@@ -66,5 +66,7 @@ Programming teacher and software developer. Passionate about web technologies, m
 
 Some project deployed on Github pages.
 
+- Ip Address tracker made with React &#x279c; [IP Tracker](https://scorcherfjk.github.io/ip-address-tracker/)
 - To do list made only with Vue.js &#x279c; [To Do App](https://scorcherfjk.github.io/ToDoListVue/) 
 - Game/WebApp made with Vue.js & Tailwind.css &#x279c; [Game](https://scorcherfjk.github.io/juego-seleccion/)
+- Working on a Weather App made with React.js &#x279c; [Weather App](https://scorcherfjk.github.io/weather-app/)
