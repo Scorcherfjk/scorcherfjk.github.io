@@ -1,0 +1,33 @@
+---
+import { getCollection } from "astro:content";
+import MainLayout from "../layouts/MainLayout.astro";
+import PageHeader from "../components/PageHeader.astro";
+import ExperienceTimeline from "../components/ExperienceTimeline.astro";
+import CallToAction from "../components/CallToAction.astro";
+
+const experience = await getCollection("experience");
+---
+
+<MainLayout
+  title="Experience"
+  description="My professional journey — the roles, companies and things I've been responsible for."
+>
+  <PageHeader
+    eyebrow="Career"
+    title="Experience"
+    description="A timeline of the roles I've held, the problems I've owned and the teams I've worked with — from teaching to full-stack development."
+  />
+
+  <section class="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+    <ExperienceTimeline entries={experience} />
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:px-8 lg:pb-24">
+    <CallToAction
+      title="Let's work together"
+      description="I'm open to full-time, freelance and consulting opportunities in web development and teaching."
+      primaryText="Get in touch"
+      primaryHref="/about"
+    />
+  </section>
+</MainLayout>

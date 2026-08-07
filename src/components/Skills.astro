@@ -1,0 +1,37 @@
+---
+import { SKILLS } from "../consts";
+
+const groups: Array<{ title: string; items: readonly string[] }> = [
+  { title: "Languages", items: SKILLS.languages },
+  { title: "Frontend", items: SKILLS.frontend },
+  { title: "Backend", items: SKILLS.backend },
+  { title: "Databases", items: SKILLS.databases },
+  { title: "Cloud & DevOps", items: SKILLS.cloud },
+  { title: "Tools", items: SKILLS.tools },
+];
+---
+
+<div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+  {
+    groups.map((group) => (
+      <div class="rounded-lg border border-border bg-surface p-6">
+        <h3
+          class="font-mono text-xs font-semibold uppercase tracking-widest text-accent"
+        >
+          {group.title}
+        </h3>
+        <ul class="mt-4 flex flex-wrap gap-2">
+          {group.items.map((item) => (
+            <li>
+              <span
+                class="inline-flex items-center rounded-md border border-border bg-surface-alt px-2.5 py-1 font-mono text-xs text-primary/90"
+              >
+                {item}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))
+  }
+</div>

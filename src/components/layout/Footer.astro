@@ -1,0 +1,99 @@
+---
+import { Icon } from "astro-icon/components";
+import { EMAIL, FOOTER_LINKS, NAME, SOCIAL_LINKS } from "../../consts";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-border bg-surface">
+  <div
+    class="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8"
+  >
+    <div class="grid grid-cols-1 gap-10 md:grid-cols-3">
+      <div class="md:col-span-1">
+        <p class="text-lg font-semibold tracking-tight text-primary">
+          {NAME}
+        </p>
+        <p class="mt-2 max-w-sm text-sm leading-relaxed text-muted">
+          Full-stack developer and programming teacher building reliable web
+          products — and sharing what I learn along the way.
+        </p>
+        <ul class="mt-6 flex gap-4">
+          {
+            SOCIAL_LINKS.map((link) => (
+              <li>
+                <a
+                  href={link.url}
+                  rel="noreferrer"
+                  target={link.url.startsWith("http") ? "_blank" : undefined}
+                  aria-label={link.label}
+                  class="grid size-9 place-items-center rounded-md border border-border text-muted transition hover:border-accent/60 hover:text-accent"
+                >
+                  <Icon name={link.icon} class="size-4" />
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div class="md:col-span-1">
+        {
+          FOOTER_LINKS.map((group) => (
+            <div>
+              <p class="text-sm font-semibold uppercase tracking-widest text-muted">
+                {group.title}
+              </p>
+              <ul class="mt-4 space-y-3 text-sm">
+                {group.children.map((child) => (
+                  <li>
+                    <a
+                      href={child.url}
+                      class="text-primary/80 transition hover:text-accent"
+                    >
+                      {child.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="md:col-span-1">
+        <p class="text-sm font-semibold uppercase tracking-widest text-muted">
+          Get in touch
+        </p>
+        <p class="mt-4 text-sm leading-relaxed text-muted">
+          Have a project, a role, or just want to say hi? My inbox is open.
+        </p>
+        <a
+          href={`mailto:${EMAIL}`}
+          class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-accent transition hover:text-accent-soft"
+        >
+          <Icon name="mail" class="size-4" />
+          {EMAIL}
+        </a>
+      </div>
+    </div>
+
+    <div
+      class="mt-12 flex flex-col gap-3 border-t border-border pt-6 text-xs text-muted sm:flex-row sm:items-center sm:justify-between"
+    >
+      <p>&copy; {year} {NAME}. All rights reserved.</p>
+      <p>
+        Built with{" "}
+        <a
+          href="https://astro.build"
+          rel="noreferrer"
+          target="_blank"
+          class="text-primary/70 underline-offset-2 transition hover:text-accent hover:underline"
+        >
+          Astro
+        </a>{" "}
+        &amp; Tailwind CSS.
+      </p>
+    </div>
+  </div>
+</footer>

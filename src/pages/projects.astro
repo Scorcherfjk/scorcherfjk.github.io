@@ -1,0 +1,41 @@
+---
+import { getCollection } from "astro:content";
+import MainLayout from "../layouts/MainLayout.astro";
+import PageHeader from "../components/PageHeader.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import CallToAction from "../components/CallToAction.astro";
+
+const projects = (await getCollection("projects")).sort(
+  (a, b) => b.data.year - a.data.year,
+);
+---
+
+<MainLayout
+  title="Projects"
+  description="A collection of projects I've designed, built and shipped."
+>
+  <PageHeader
+    eyebrow="Portfolio"
+    title="Projects"
+    description="Things I've designed, built and shipped — small tools, full web products, and everything in between. Click through to read the case studies."
+  />
+
+  <section class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {
+        projects.map((project) => (
+          <ProjectCard project={project} />
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:px-8 lg:pb-24">
+    <CallToAction
+      title="Want to see how I work?"
+      description="Each project has a case study where I break down the problem, the decisions and the results."
+      primaryText="Read the case studies"
+      primaryHref="/case-studies"
+    />
+  </section>
+</MainLayout>

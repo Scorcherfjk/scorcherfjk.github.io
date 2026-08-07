@@ -1,0 +1,195 @@
+---
+import { Icon } from "astro-icon/components";
+import { NAME, NAV_LINKS } from "../../consts";
+
+const { pathname } = Astro.url;
+
+const isActive = (url: string) =>
+  url === "/" ? pathname === "/" : pathname === url || pathname.startsWith(`${url}/`);
+---
+
+<header class="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between">
+      <a href="/" class="flex items-center gap-2.5 text-primary">
+        <span class="grid size-8 place-items-center rounded-md bg-surface-alt">
+          <Icon name="code" class="size-5 text-accent-soft" />
+        </span>
+        <span class="text-base font-semibold tracking-tight">{NAME}</span>
+      </a>
+
+      <nav aria-label="Main" class="hidden md:block">
+        <ul class="flex items-center gap-7 text-sm">
+          {
+            NAV_LINKS.map((link) => (
+              <li>
+                <a
+                  href={link.url}
+                  aria-current={isActive(link.url) ? "page" : undefined}
+                  class:list={[
+                    "transition",
+                    isActive(link.url)
+                      ? "font-medium text-accent"
+                      : "text-primary/80 hover:text-primary",
+                  ]}
+                >
+                  {link.text}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <button
+          type="button"
+          id="theme-toggle"
+          aria-label="Toggle dark or light theme"
+          class="rounded-md border border-border bg-surface p-2 text-primary transition hover:border-accent/60 hover:text-accent"
+        >
+          <svg
+            id="theme-toggle-moon"
+            xmlns="http://www.w3.org/2000/svg"
+            class="size-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+            ></path>
+          </svg>
+          <svg
+            id="theme-toggle-sun"
+            xmlns="http://www.w3.org/2000/svg"
+            class="size-5 hidden"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+            ></path>
+          </svg>
+        </button>
+
+        <button
+          type="button"
+          id="menu-toggle"
+          aria-label="Open navigation menu"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+          class="rounded-md border border-border bg-surface p-2 text-primary transition hover:text-accent md:hidden"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="size-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <nav
+    id="mobile-menu"
+    aria-label="Mobile navigation"
+    aria-hidden="true"
+    class="absolute top-full left-0 hidden w-full border-b border-border bg-background px-4 py-4"
+  >
+    <ul class="flex flex-col text-sm">
+      {
+        NAV_LINKS.map((link) => (
+          <li>
+            <a
+              href={link.url}
+              class="block w-full rounded-md px-2 py-2.5 text-primary transition hover:bg-surface-alt"
+            >
+              {link.text}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>("#menu-toggle");
+  const menu = document.querySelector<HTMLElement>("#mobile-menu");
+
+  function setMenu(open: boolean) {
+    if (!toggle || !menu) return;
+    menu.classList.toggle("hidden", !open);
+    menu.setAttribute("aria-hidden", String(!open));
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.setAttribute(
+      "aria-label",
+      open ? "Close navigation menu" : "Open navigation menu",
+    );
+  }
+
+  toggle?.addEventListener("click", () => {
+    setMenu(toggle.getAttribute("aria-expanded") !== "true");
+  });
+
+  menu?.addEventListener("click", (event) => {
+    if (event.target instanceof HTMLAnchorElement) setMenu(false);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") setMenu(false);
+  });
+
+  const themeToggle = document.querySelector<HTMLButtonElement>("#theme-toggle");
+  const sunIcon = themeToggle?.querySelector("#theme-toggle-sun");
+  const moonIcon = themeToggle?.querySelector("#theme-toggle-moon");
+
+  function setThemeIcon() {
+    const dark = document.documentElement.classList.contains("dark");
+    sunIcon?.classList.toggle("hidden", !dark);
+    moonIcon?.classList.toggle("hidden", dark);
+  }
+
+  themeToggle?.addEventListener("click", () => {
+    const dark = document.documentElement.classList.toggle("dark");
+    try {
+      localStorage.setItem("theme", dark ? "dark" : "light");
+    } catch {
+      /* noop */
+    }
+    setThemeIcon();
+  });
+
+  window
+    .matchMedia("(prefers-color-scheme: dark)")
+    .addEventListener("change", (event) => {
+      let hasStored = false;
+      try {
+        hasStored = Boolean(localStorage.getItem("theme"));
+      } catch {
+        /* noop */
+      }
+      if (hasStored) return;
+      document.documentElement.classList.toggle("dark", event.matches);
+      setThemeIcon();
+    });
+
+  setThemeIcon();
+</script>

@@ -1,0 +1,153 @@
+---
+import { getCollection, render } from "astro:content";
+import MainLayout from "../../layouts/MainLayout.astro";
+import PageHeader from "../../components/PageHeader.astro";
+import Badge from "../../components/Badge.astro";
+import CallToAction from "../../components/CallToAction.astro";
+import { Icon } from "astro-icon/components";
+
+export async function getStaticPaths() {
+  const caseStudies = await getCollection("caseStudies");
+  return caseStudies.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+
+const projects = await getCollection("projects");
+const relatedProject = projects.find((p) => p.id === data.project);
+
+const meta = [
+  { label: "Role", value: data.role },
+  { label: "Timeline", value: data.timeline },
+  { label: "Year", value: String(data.year) },
+].filter((item) => item.value);
+---
+
+<MainLayout title={data.title} description={data.summary}>
+  <PageHeader
+    eyebrow="Case study"
+    title={data.title}
+    description={data.summary}
+  >
+    <div class="mt-6 flex flex-wrap items-center gap-4">
+      {
+        meta.map((item) => (
+          <span class="font-mono text-xs text-muted">
+            <span class="text-accent">{item.label}:</span> {item.value}
+          </span>
+        ))
+      }
+    </div>
+    <ul class="mt-5 flex flex-wrap gap-2">
+      {data.stack.map((tech) => (
+        <li>
+          <Badge text={tech} />
+        </li>
+      ))}
+    </ul>
+  </PageHeader>
+
+  {
+    data.metrics && data.metrics.length > 0 && (
+      <section class="border-b border-border">
+        <div class="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
+          <dl class="grid grid-cols-2 gap-8 lg:grid-cols-4">
+            {
+              data.metrics.map((metric) => (
+                <div>
+                  <dt class="order-2 mt-1 text-sm text-muted">
+                    {metric.label}
+                  </dt>
+                  <dd class="order-1 text-3xl font-extrabold tracking-tight text-accent">
+                    {metric.value}
+                  </dd>
+                </div>
+              ))
+            }
+          </dl>
+        </div>
+      </section>
+    )
+  }
+
+  <section class="mx-auto max-w-3xl px-4 py-14 sm:px-6 lg:py-20">
+    <article class="md-body">
+      <Content />
+    </article>
+
+    {
+      data.highlights && data.highlights.length > 0 && (
+        <div class="mt-12 rounded-lg border border-border bg-surface p-6">
+          <h2 class="text-lg font-bold tracking-tight text-primary">
+            Key takeaways
+          </h2>
+          <ul class="mt-4 list-none space-y-2.5">
+            {
+              data.highlights.map((highlight) => (
+                <li class="flex gap-3 text-sm text-primary/85">
+                  <span class="mt-2 size-1.5 shrink-0 rounded-full bg-accent" />
+                  {highlight}
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      )
+    }
+
+    <div class="mt-12 flex flex-wrap gap-4">
+      {
+        data.links?.demo && (
+          <a
+            href={data.links.demo}
+            target="_blank"
+            rel="noreferrer"
+            class="inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3 text-sm font-semibold text-background transition hover:bg-accent-soft"
+          >
+            <Icon name="external-link" class="size-4" />
+            Live demo
+          </a>
+        )
+      }
+      {
+        data.links?.repo && (
+          <a
+            href={data.links.repo}
+            target="_blank"
+            rel="noreferrer"
+            class="inline-flex items-center gap-2 rounded-md border border-border bg-surface px-6 py-3 text-sm font-semibold text-primary transition hover:border-accent/60 hover:text-accent"
+          >
+            <Icon name="github" class="size-4" />
+            View source
+          </a>
+        )
+      }
+      {
+        relatedProject && (
+          <a
+            href={`/projects`}
+            class="inline-flex items-center gap-2 rounded-md border border-border bg-surface px-6 py-3 text-sm font-semibold text-primary transition hover:border-accent/60 hover:text-accent"
+          >
+            All projects
+          </a>
+        )
+      }
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:px-8 lg:pb-24">
+    <CallToAction
+      title="Want to build something together?"
+      description="Every project starts with a conversation. I'd love to hear what you're working on."
+      primaryText="Get in touch"
+      primaryHref="/about"
+      secondaryText="More case studies"
+      secondaryHref="/case-studies"
+    />
+  </section>
+</MainLayout>

@@ -1,0 +1,43 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  primaryText: string;
+  primaryHref: string;
+  secondaryText?: string;
+  secondaryHref?: string;
+}
+
+const { title, description, primaryText, primaryHref, secondaryText, secondaryHref } =
+  Astro.props;
+---
+
+<section
+  class="rounded-xl border border-accent/30 bg-gradient-to-br from-surface to-surface-alt p-8 text-center sm:p-12"
+>
+  <h2 class="text-2xl font-bold tracking-tight text-primary sm:text-3xl">
+    {title}
+  </h2>
+  <p class="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted">
+    {description}
+  </p>
+
+  <div class="mt-8 flex flex-wrap justify-center gap-4">
+    <a
+      href={primaryHref}
+      class="inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3 text-sm font-semibold text-background transition hover:bg-accent-soft"
+    >
+      {primaryText}
+    </a>
+    {
+      secondaryText && secondaryHref && (
+        <a
+          href={secondaryHref}
+          class="inline-flex items-center gap-2 rounded-md border border-border bg-background px-6 py-3 text-sm font-semibold text-primary transition hover:border-accent/60 hover:text-accent"
+        >
+          {secondaryText}
+        </a>
+      )
+    }
+  </div>
+</section>

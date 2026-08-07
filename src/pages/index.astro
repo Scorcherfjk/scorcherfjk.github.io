@@ -1,0 +1,177 @@
+---
+import { getCollection } from "astro:content";
+import MainLayout from "../layouts/MainLayout.astro";
+import Hero from "../components/Hero.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import CertificationCard from "../components/CertificationCard.astro";
+import Skills from "../components/Skills.astro";
+import CallToAction from "../components/CallToAction.astro";
+import { Icon } from "astro-icon/components";
+import { formatRange } from "../utils";
+import { NAME, SITE_DESCRIPTION } from "../consts";
+
+const projects = (await getCollection("projects")).sort(
+  (a, b) => b.data.year - a.data.year,
+);
+const featuredProjects = projects.filter((p) => p.data.featured).slice(0, 3);
+
+const experience = (await getCollection("experience")).sort((a, b) =>
+  b.data.startDate.localeCompare(a.data.startDate),
+);
+
+const certifications = (await getCollection("certifications")).sort((a, b) =>
+  b.data.date.localeCompare(a.data.date),
+);
+const featuredCertifications = certifications.slice(0, 3);
+
+const startYear = Math.min(
+  ...experience.map((entry) => Number(entry.data.startDate.slice(0, 4))),
+);
+const yearsOfExperience = new Date().getFullYear() - startYear;
+
+const stats = [
+  { label: "Years building software", value: String(yearsOfExperience) },
+  { label: "Projects shipped", value: String(projects.length) },
+  { label: "Certifications", value: String(certifications.length) },
+  { label: "Students mentored", value: "100+" },
+];
+---
+
+<MainLayout title={NAME} description={SITE_DESCRIPTION}>
+  <Hero title={NAME} description={SITE_DESCRIPTION} />
+
+  <section class="border-b border-border">
+    <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
+      <dl class="grid grid-cols-2 gap-8 lg:grid-cols-4">
+        {
+          stats.map((stat) => (
+            <div class="text-center">
+              <dt class="order-2 mt-1 text-sm text-muted">{stat.label}</dt>
+              <dd class="order-1 text-4xl font-extrabold tracking-tight text-accent">
+                {stat.value}
+              </dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <SectionHeading
+        eyebrow="Selected work"
+        title="Projects I've built"
+        description="A few things I've designed, built and shipped — from small tools to full web products."
+      />
+      <a
+        href="/projects"
+        class="inline-flex items-center gap-2 text-sm font-semibold text-accent transition hover:text-accent-soft"
+      >
+        All projects
+        <Icon name="arrow-right" class="size-4" />
+      </a>
+    </div>
+
+    <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {
+        featuredProjects.map((project) => (
+          <ProjectCard project={project} />
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="border-y border-border bg-surface">
+    <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+      <SectionHeading
+        eyebrow="Toolbox"
+        title="Skills & technologies"
+        description="The stack I reach for most, sharpened across production work, teaching and side projects."
+      />
+      <div class="mt-12">
+        <Skills />
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <SectionHeading
+        eyebrow="Career"
+        title="Where I've worked"
+        description="A snapshot of my experience. The full timeline lives on its own page."
+      />
+      <a
+        href="/experience"
+        class="inline-flex items-center gap-2 text-sm font-semibold text-accent transition hover:text-accent-soft"
+      >
+        Full timeline
+        <Icon name="arrow-right" class="size-4" />
+      </a>
+    </div>
+
+    <ul class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
+      {
+        experience.slice(0, 4).map((entry) => (
+          <li
+            class="rounded-lg border border-border bg-surface p-6"
+          >
+            <p class="font-mono text-xs uppercase tracking-wider text-muted">
+              {formatRange(
+                entry.data.startDate,
+                entry.data.endDate,
+                entry.data.current,
+              )}
+            </p>
+            <h3 class="mt-2 text-lg font-bold tracking-tight text-primary">
+              {entry.data.role}
+            </h3>
+            <p class="mt-0.5 text-sm font-medium text-accent">
+              {entry.data.company}
+            </p>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="border-y border-border bg-surface">
+    <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+      <div class="flex flex-wrap items-end justify-between gap-6">
+        <SectionHeading
+          eyebrow="Credentials"
+          title="Certifications"
+          description="Training and certifications I've earned. Each one links to its certificate as a PDF."
+        />
+        <a
+          href="/certifications"
+          class="inline-flex items-center gap-2 text-sm font-semibold text-accent transition hover:text-accent-soft"
+        >
+          All certifications
+          <Icon name="arrow-right" class="size-4" />
+        </a>
+      </div>
+
+      <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {
+          featuredCertifications.map((cert) => (
+            <CertificationCard cert={cert} />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+    <CallToAction
+      title="Have a project in mind?"
+      description="I'm always open to interesting problems, collaborations and conversations about web development, machine learning and teaching."
+      primaryText="Get in touch"
+      primaryHref="/about"
+      secondaryText="Browse my work"
+      secondaryHref="/projects"
+    />
+  </section>
+</MainLayout>

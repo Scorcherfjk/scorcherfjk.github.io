@@ -1,0 +1,79 @@
+---
+import { getCollection } from "astro:content";
+import MainLayout from "../../layouts/MainLayout.astro";
+import PageHeader from "../../components/PageHeader.astro";
+import { Icon } from "astro-icon/components";
+import Badge from "../../components/Badge.astro";
+import CallToAction from "../../components/CallToAction.astro";
+
+const caseStudies = (await getCollection("caseStudies")).sort(
+  (a, b) => b.data.year - a.data.year,
+);
+---
+
+<MainLayout
+  title="Case Studies"
+  description="Deep dives into the projects I've worked on — the problems, the decisions and the results."
+>
+  <PageHeader
+    eyebrow="Case studies"
+    title="How I ship work"
+    description="Long-form breakdowns of real projects: the problem, the constraints, the decisions I made, and what the work achieved."
+  />
+
+  <section class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+    <ul class="grid grid-cols-1 gap-6 md:grid-cols-2">
+      {
+        caseStudies.map((entry) => (
+          <li>
+            <a
+              href={`/case-studies/${entry.id}`}
+              class="group flex h-full flex-col rounded-lg border border-border bg-surface p-6 transition hover:-translate-y-0.5 hover:border-accent/60 hover:shadow-lg hover:shadow-black/10"
+            >
+              <div class="flex items-start justify-between gap-4">
+                <h2 class="text-xl font-bold tracking-tight text-primary group-hover:text-accent">
+                  {entry.data.title}
+                </h2>
+                <span class="shrink-0 font-mono text-xs text-muted">
+                  {entry.data.year}
+                </span>
+              </div>
+
+              <p class="mt-3 flex-1 text-sm leading-relaxed text-muted">
+                {entry.data.summary}
+              </p>
+
+              <div class="mt-6 flex items-center justify-between gap-4">
+                <ul class="flex flex-wrap gap-2">
+                  {entry.data.stack.slice(0, 3).map((tech) => (
+                    <li>
+                      <Badge text={tech} />
+                    </li>
+                  ))}
+                </ul>
+                <span
+                  class="inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-accent"
+                >
+                  Read
+                  <Icon
+                    name="arrow-right"
+                    class="size-4 transition group-hover:translate-x-0.5"
+                  />
+                </span>
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:px-8 lg:pb-24">
+    <CallToAction
+      title="Want this level of detail on your project?"
+      description="I bring the same rigor to every engagement. Let's talk about what you're building."
+      primaryText="Get in touch"
+      primaryHref="/about"
+    />
+  </section>
+</MainLayout>
