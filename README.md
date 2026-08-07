@@ -1,72 +1,73 @@
-# Hey there 👋🏻 <br> I'm FJavier De Freitas
+# FJavier De Freitas — Portfolio
 
-Programming teacher and software developer. Passionate about web technologies, machine learning and optimization.
+A developer portfolio built with **Astro**, **Tailwind CSS v4** and **astro-icon**. Fully static, deployed to GitHub Pages.
 
-- 🔭 I’m currently working on Havas - I'm FullStack Developer
-- 🌱 I’m currently learning how to make a bot for Discord
-- 💬 Ask me about web technologies and machine learning
-- 📫 How to reach me: [@fjdfreitas](https://twitter.com/fjdfreitas)
+## Stack
 
-## Skills
+- [Astro](https://astro.build) (static output)
+- [Tailwind CSS v4](https://tailwindcss.com) via `@tailwindcss/vite`
+- [astro-icon](https://astro.build/guides/integrations-guide/astro-icon) with local SVGs in `src/icons/`
+- [@astrojs/sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap)
+- Content collections with `zod` schemas (`src/content/`)
+- Self-hosted fonts: Inter Variable + JetBrains Mono Variable
 
-#### Programming Languages
+## Getting started
 
-![JavaScript](https://img.shields.io/badge/-Javascript-040d04?style=flat-square&logo=javascript)
-![Python](https://img.shields.io/badge/-Python-040d04?style=flat-square&logo=python)
-![Swift](https://img.shields.io/badge/-Swift-040d04?style=flat-square&logo=swift)
-![Dart](https://img.shields.io/badge/-Dart-040d04?style=flat-square&logo=dart)
+```sh
+pnpm install     # install dependencies
+pnpm dev         # start dev server at http://localhost:4321
+pnpm build       # production build → dist/
+pnpm preview     # preview the production build
+pnpm check       # run astro check (typecheck)
+```
 
-#### Technologies
+## Content
 
-![Git](https://img.shields.io/badge/-Git-040d04?style=flat-square&logo=git)
-![Flutter](https://img.shields.io/badge/-Flutter-040d04?style=flat-square&logo=flutter)
-![Firebase](https://img.shields.io/badge/-Firebase-040d04?style=flat-square&logo=firebase)
-![Docker](https://img.shields.io/badge/-Docker-040d04?style=flat-square&logo=docker)
-![Kubernetes](https://img.shields.io/badge/-Kubernetes-040d04?style=flat-square&logo=kubernetes)
+All content lives in `src/content/` as Markdown files with typed frontmatter:
 
-![React](https://img.shields.io/badge/-React-black?style=flat-square&logo=react)
-![React Router](https://img.shields.io/badge/-React%20Router-040d04?style=flat-square&logo=react-router)
-![Redux](https://img.shields.io/badge/-Redux-040d04?style=flat-square&logo=redux)
-![Vue](https://img.shields.io/badge/-Vue-black?style=flat-square&logo=vue.js)
-![GraphQL](https://img.shields.io/badge/-GraphQL-040d04?style=flat-square&logo=graphql)
-![Webpack](https://img.shields.io/badge/-Webpack-040d04?style=flat-square&logo=webpack)
-![JSON Web Tokens](https://img.shields.io/badge/-JWT-040d04?style=flat-square&logo=json-web-tokens)
-![Tensorflow](https://img.shields.io/badge/-Tensorflow-040d04?style=flat-square&logo=tensorflow)
+| Collection       | Path                     | Purpose                              |
+| ---------------- | ------------------------ | ------------------------------------ |
+| `projects`       | `content/projects/`      | Project cards (name, stack, links)   |
+| `caseStudies`    | `content/case-studies/`  | Long-form project breakdowns         |
+| `experience`     | `content/experience/`    | Work history timeline                |
+| `certifications` | `content/certifications/`| Certs linked to PDFs                 |
+| `hobbies`        | `content/hobbies/`       | Hobbies + skills gained              |
 
+### Certifications (PDFs)
 
-#### DataBases
+The `pdf` field in each certification points to a file in `public/certifications/`.
+Drop the real PDFs there following the naming convention in
+`public/certifications/README.md`. They are served at
+`https://scorcherfjk.github.io/certifications/<file>.pdf` and open in a new tab.
 
-![MongoDB](https://img.shields.io/badge/-MongoDB-black?style=flat-square&logo=mongodb)
-![MySQL](https://img.shields.io/badge/-MySQL-040d04?style=flat-square&logo=mysql)
-![Redis](https://img.shields.io/badge/-Redis-040d04?style=flat-square&logo=redis)
-![Microsoft SQL Server](https://img.shields.io/badge/-MS%20SQL%20Server-040d04?style=flat-square&logo=microsoft-sql-server)
+### Case studies
 
-#### Design
+Every case study is a Markdown file whose **body** is rendered on
+`/case-studies/<slug>`. Use `##` headings and standard Markdown — styling is
+provided by `.md-body` in `src/styles/global.css`.
 
-![CSS3](https://img.shields.io/badge/-CSS-040d04?style=flat-square&logo=css3)
-![Sass](https://img.shields.io/badge/-Sass-black?style=flat-square&logo=sass)
-![PostCSS](https://img.shields.io/badge/-PostCSS-040d04?style=flat-square&logo=postcss)
-![Tailwind CSS](https://img.shields.io/badge/-TailwindCSS-040d04?style=flat-square&logo=tailwind-css)
+## Theme
 
-#### Prototyping
+The palette (dark charcoal + gold, with a light variant) is defined with
+Tailwind v4 `@theme` tokens in `src/styles/global.css`:
 
-![Figma](https://img.shields.io/badge/-Figma-040d04?style=flat-square&logo=figma)
-![Adobe XD](https://img.shields.io/badge/-AdobeXD-black?style=flat-square&logo=adobe-xd)
+- `background`, `surface`, `surface-alt`, `border`
+- `primary`, `muted` (text)
+- `accent`, `accent-soft`, `focus`
 
-#### Marketing Platform
+A dark/light toggle is included in the navbar (persisted in `localStorage`,
+defaulting to the OS preference).
 
-![Google Analytics](https://img.shields.io/badge/-Google%20Analytics-040d04?style=flat-square&logo=google-analytics)
-![google Tag Manager](https://img.shields.io/badge/-Google%20Tag%20Manager-black?style=flat-square&logo=google-tag-manager)
+## Deploying to GitHub Pages
 
-#### Cloud
+1. In the repo settings go to **Settings → Pages**.
+2. Set **Source** to **GitHub Actions** (this replaces the old branch-based deploy).
+3. Push to `master` — `.github/workflows/deploy.yml` builds `dist/` and deploys it.
+4. The site is served at `https://scorcherfjk.github.io`.
 
-![Google Cloud Platform](https://img.shields.io/badge/-GCP-040d04?style=flat-square&logo=google-cloud)
+## Editing
 
-## Projects
-
-Some project deployed on Github pages.
-
-- Ip Address tracker made with React &#x279c; [IP Tracker](https://scorcherfjk.github.io/ip-address-tracker/)
-- To do list made only with Vue.js &#x279c; [To Do App](https://scorcherfjk.github.io/ToDoListVue/) 
-- Game/WebApp made with Vue.js & Tailwind.css &#x279c; [Game](https://scorcherfjk.github.io/juego-seleccion/)
-- Working on a Weather App made with React.js &#x279c; [Weather App](https://scorcherfjk.github.io/weather-app/)
+- Global text/branding: `src/consts.ts`
+- Navigation & social links: `src/consts.ts`
+- Page copy: `src/pages/*.astro`
+- Colors & fonts: `src/styles/global.css`

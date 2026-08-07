@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0c0f14"/>
+  <rect x="0" y="0" width="1200" height="630" fill="url(#grid)" opacity="0.4"/>
+  <defs>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M60 0H0v60" fill="none" stroke="#28303c" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <text x="80" y="300" font-family="Inter, system-ui, sans-serif" font-size="72" font-weight="800" fill="#e6e8ec">FJavier De Freitas</text>
+  <text x="82" y="360" font-family="JetBrains Mono, monospace" font-size="30" fill="#f59e0b">Full-Stack Developer &amp; Programming Teacher</text>
+  <text x="82" y="410" font-family="Inter, system-ui, sans-serif" font-size="24" fill="#98a2b0">React · Vue · Node.js · Python · Docker</text>
+</svg>
