@@ -1,0 +1,72 @@
+[
+  {
+    "id": "agitalo-suave",
+    "name": "Agítalo Suave",
+    "tagline": "A bartending blog built and grown by me.",
+    "description": "My cocktail blog: recipes, technique and a weekly blog. It's also my craft — mixology, balancing flavors and building drinks that look as good as they taste. Designed the brand and built the site from scratch with Astro and Tailwind.",
+    "icon": "cocktail",
+    "skills": [
+      "Mixology & flavor balance",
+      "Cocktail design & presentation",
+      "Astro & Tailwind CSS & CMS integration",
+      "Content strategy & SEO",
+      "Brand, visual design and Audience growth"
+    ],
+    "featured": true,
+    "links": [
+      {
+        "url": "https://agitalosuave.com",
+        "label": "Visit the site"
+      },
+      {
+        "url": "https://github.com/scorcherfjk/agitalo-suave",
+        "label": "View source"
+      }
+    ]
+  },
+  {
+    "id": "ukulele",
+    "name": "Ukulele",
+    "tagline": "My creative outlet, strummed daily.",
+    "description": "Playing the ukulele is how I keep my creative side sharp. Learning chords, rhythm and new songs every week teaches me patience, deliberate practice, and the value of small daily reps — the same way I approach learning new tools.",
+    "icon": "music",
+    "skills": [
+      "Deliberate practice",
+      "Rhythm & timing",
+      "Consistency",
+      "Patience",
+      "Pattern recognition"
+    ],
+    "featured": false
+  },
+  {
+    "id": "reading",
+    "name": "Reading",
+    "tagline": "Always one more book on the stack.",
+    "description": "I read across technical books, sci-fi and essays. It's how I explore ideas I wouldn't meet at work, and it keeps me curious — plus it's quietly trained me to absorb documentation and technical content faster.",
+    "icon": "book",
+    "skills": [
+      "Fast information absorption",
+      "Curiosity",
+      "Focus",
+      "Note-taking & synthesis",
+      "Broad context"
+    ],
+    "featured": false
+  },
+  {
+    "id": "rollerblading",
+    "name": "Rollerblading",
+    "tagline": "Balance, on and off wheels.",
+    "description": "Rollerblading is my physical hobby. Falling, getting back up and pushing a little further every session builds resilience and confidence — and it reminds me that progress comes from repetition and small wins, not overnight.",
+    "icon": "skate",
+    "skills": [
+      "Resilience",
+      "Balance & coordination",
+      "Incremental progress",
+      "Discipline",
+      "Recovering from failure"
+    ],
+    "featured": false
+  }
+]

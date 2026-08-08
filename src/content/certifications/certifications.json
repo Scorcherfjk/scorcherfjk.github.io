@@ -1,0 +1,40 @@
+[
+  {
+    "id": "azure-ai-900",
+    "title": "Microsoft Certified: Azure AI Fundamentals",
+    "issuer": "Microsoft",
+    "date": "2021-05",
+    "category": "Cloud & AI",
+    "pdf": "/certifications/azure-ai-900.pdf",
+    "credentialUrl": "https://www.credly.com/badges/8695a678-60ec-4e9b-9031-93333f3395d9/public_url",
+    "skills": ["Azure", "AI Fundamentals", "Machine Learning"]
+  },
+  {
+    "id": "mongodb-associate-developer",
+    "title": "MongoDB Associate Developer",
+    "issuer": "MongoDB",
+    "date": "2023-12",
+    "category": "Database",
+    "pdf": "/certifications/mongodb-associate-developer.pdf",
+    "credentialUrl": "https://www.credly.com/badges/e43649db-d0c9-4b2a-ad2c-15646d3717e6/public_url",
+    "skills": ["MongoDB", "Node.js", "Aggregation Pipeline"]
+  },
+  {
+    "id": "mongodb-si-architect",
+    "title": "MongoDB SI Architect",
+    "issuer": "MongoDB",
+    "date": "2023-09",
+    "category": "Database",
+    "pdf": "/certifications/mongodb-si-architect.pdf",
+    "skills": ["MongoDB", "Architecture", "Performance", "Security"]
+  },
+  {
+    "id": "mongodb-si-associate",
+    "title": "MongoDB SI Associate",
+    "issuer": "MongoDB",
+    "date": "2023-08",
+    "category": "Database",
+    "pdf": "/certifications/mongodb-si-associate.pdf",
+    "skills": ["MongoDB", "Deployment", "High Availability"]
+  }
+]

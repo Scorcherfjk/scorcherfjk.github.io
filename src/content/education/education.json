@@ -1,0 +1,10 @@
+[
+  {
+    "id": "iutv-degree",
+    "degree": "Higher Technical Degree in Information Technology",
+    "institution": "IUTV — Instituto Universitario de Tecnología de Venezuela",
+    "location": "Caracas, Venezuela",
+    "pdf": "/education/iutv-degree.pdf",
+    "skills": ["Information Technology", "Software Engineering", "Computer Science Fundamentals"]
+  }
+]

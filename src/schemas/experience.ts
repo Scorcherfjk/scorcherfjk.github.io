@@ -9,6 +9,14 @@ export const experienceSchema = z.object({
   current: z.boolean().default(false),
   summary: z.string().optional(),
   highlights: z.array(z.string()).optional(),
+  clients: z
+    .array(
+      z.object({
+        name: z.string(),
+        highlights: z.array(z.string()),
+      }),
+    )
+    .optional(),
   stack: z.array(z.string()).optional(),
 });
 

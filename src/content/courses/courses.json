@@ -1,0 +1,94 @@
+[
+  {
+    "id": "gcp-developing-applications",
+    "title": "Developing Applications with Google Cloud",
+    "provider": "Google Cloud",
+    "type": "Specialization",
+    "date": "2019-11",
+    "credentialUrl": "https://www.coursera.org/account/accomplishments/specialization/MC2A6G7HWQKE",
+    "pdf": "/courses/gcp-developing-applications.pdf",
+    "skills": [
+      "Google Cloud Platform",
+      "Kubernetes",
+      "Serverless",
+      "Cloud Storage",
+      "Microservices",
+      "Application Development"
+    ]
+  },
+  {
+    "id": "anthropic-claude-101",
+    "title": "Claude 101",
+    "provider": "Anthropic",
+    "type": "Course",
+    "credentialUrl": "https://verify.skilljar.com/c/cry2redjiamh",
+    "pdf": "/courses/certificate-claude-101.pdf",
+    "skills": ["Claude", "LLM Fundamentals", "Prompting"]
+  },
+  {
+    "id": "anthropic-claude-code-in-action",
+    "title": "Claude Code in Action",
+    "provider": "Anthropic",
+    "type": "Course",
+    "credentialUrl": "https://verify.skilljar.com/c/eyybvw35ye2t",
+    "pdf": "/courses/certificate-claude-code-in-action.pdf",
+    "skills": ["Claude Code", "Agentic Coding", "CLI"]
+  },
+  {
+    "id": "anthropic-introduction-to-mcp",
+    "title": "Introduction to Model Context Protocol",
+    "provider": "Anthropic",
+    "type": "Course",
+    "credentialUrl": "https://verify.skilljar.com/c/g54uhhr7fb6a",
+    "pdf": "/courses/certificate-introduction-to-mcp.pdf",
+    "skills": ["Model Context Protocol", "Context Engineering", "LLM Integration"]
+  },
+  {
+    "id": "anthropic-introduction-to-agent-skills",
+    "title": "Introduction to Agent Skills",
+    "provider": "Anthropic",
+    "type": "Course",
+    "credentialUrl": "https://verify.skilljar.com/c/mifypwjdat32",
+    "pdf": "/courses/certificate-introduction-to-agent-skills.pdf",
+    "skills": ["Agent Skills", "Claude", "Tool Use"]
+  },
+  {
+    "id": "anthropic-introduction-to-subagents",
+    "title": "Introduction to Subagents",
+    "provider": "Anthropic",
+    "type": "Course",
+    "credentialUrl": "https://verify.skilljar.com/c/ux6kiz22a6mr",
+    "pdf": "/courses/certificate-introduction-to-subagents.pdf",
+    "skills": ["Subagents", "Multi-Agent Systems", "Orchestration"]
+  },
+  {
+    "id": "anthropic-ai-capabilities-and-limitations",
+    "title": "AI Capabilities and Limitations",
+    "provider": "Anthropic",
+    "type": "Course",
+    "credentialUrl": "https://verify.skilljar.com/c/2qx6v2rps4hi",
+    "pdf": "/courses/certificate-ai-capabilities-and-limitations.pdf",
+    "skills": ["AI Safety", "Model Limits", "Responsible AI"]
+  },
+  {
+    "id": "udemy-modern-redis-unleashed",
+    "title": "Modern Redis Unleashed",
+    "provider": "Udemy",
+    "type": "Course",
+    "skills": ["Redis", "Caching", "Data Structures"]
+  },
+  {
+    "id": "udemy-mcp-connect-llms-agents",
+    "title": "Curso de MCP: Conecta LLMs y Agentes de IA con Apps Externas",
+    "provider": "Udemy",
+    "type": "Course",
+    "skills": ["Model Context Protocol", "LLMs", "AI Agents"]
+  },
+  {
+    "id": "udemy-docker-practical-guide",
+    "title": "Docker - Guía práctica de uso para desarrolladores",
+    "provider": "Udemy",
+    "type": "Course",
+    "skills": ["Docker", "Containers", "DevOps"]
+  }
+]

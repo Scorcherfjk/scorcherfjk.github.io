@@ -5,7 +5,7 @@ export const certificationSchema = z.object({
   issuer: z.string(),
   date: z.string(),
   category: z.string(),
-  pdf: z.string(),
+  pdf: z.string().optional(),
   credentialUrl: z.url().optional(),
   skills: z.array(z.string()).optional(),
 });

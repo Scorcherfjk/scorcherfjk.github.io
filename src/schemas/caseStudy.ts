@@ -21,6 +21,14 @@ export const caseStudySchema = z.object({
     .object({
       demo: z.url().optional(),
       repo: z.url().optional(),
+      repos: z
+        .array(
+          z.object({
+            label: z.string(),
+            url: z.url(),
+          }),
+        )
+        .optional(),
     })
     .optional(),
 });

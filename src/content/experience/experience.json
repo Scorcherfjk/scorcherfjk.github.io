@@ -1,0 +1,174 @@
+[
+  {
+    "id": "attachmedia-analytics",
+    "role": "Digital Analytics Engineer",
+    "company": "AttachMedia",
+    "location": "Lima, Perú",
+    "startDate": "2019-10",
+    "endDate": "2020-09",
+    "current": false,
+    "summary": "Built APIs, cloud integrations and interactive web applications, managing deployments on Firebase and Google Cloud Platform.",
+    "highlights": [
+      "Developed APIs, cloud integrations, and interactive web applications using Node.js and Vue.js.",
+      "Managed deployments and cloud services using Firebase and Google Cloud Platform."
+    ],
+    "stack": ["Node.js", "Vue.js", "Firebase", "GCP"]
+  },
+  {
+    "id": "globant-senior-backend",
+    "role": "Senior Backend Engineer",
+    "company": "Globant",
+    "location": "Lima, Perú",
+    "startDate": "2022-05",
+    "endDate": null,
+    "current": true,
+    "summary": "Senior backend engineer delivering enterprise solutions across fintech, entertainment, analytics and construction tech — driving architectural decisions, mentoring engineers and shipping reliable, production-grade systems.",
+    "clients": [
+      {
+        "name": "Command Alkon",
+        "highlights": [
+          "Introduced an ADR (Architectural Decision Record) framework that standardized technical decision-making and reduced undocumented architectural dependencies across teams.",
+          "Led architecture spikes and technical research initiatives to evaluate scalable third-party solutions and establish engineering documentation standards.",
+          "Designed and executed idempotent large-scale production migration scripts for critical business data with zero downtime impact.",
+          "Mentored engineers on SOLID principles, design patterns, and Hexagonal Architecture, improving code maintainability and team autonomy.",
+          "Delivered highly reliable production-grade code with strong automated testing coverage, significantly reducing QA regression cycles."
+        ]
+      },
+      {
+        "name": "Disney Parks",
+        "highlights": [
+          "Developed scalable backend services and internal enterprise platforms using Node.js, NestJS, and Vue.js.",
+          "Contributed to a Server-Driven UI ecosystem powering dynamic user experiences across enterprise applications.",
+          "Refactored backend services following scalable architecture and software engineering best practices.",
+          "Built reusable engineering tooling and Yeoman generators to streamline development workflows.",
+          "Conducted technical interviews and contributed to engineering hiring decisions across multiple teams.",
+          "Coordinated distributed engineering efforts across multiple countries, supporting mentoring and delivery alignment."
+        ]
+      },
+      {
+        "name": "Interbanking",
+        "highlights": [
+          "Migrated backend services to NestJS and AWS Lambda architectures to improve scalability and maintainability.",
+          "Implemented Hexagonal Architecture patterns and reusable internal libraries for shared business logic.",
+          "Developed S3-based file processing pipelines converting Excel and CSV data into structured JSON workflows."
+        ]
+      }
+    ],
+    "stack": ["Node.js", "TypeScript", "NestJS", "AWS", "Vue.js", "Serverless"]
+  },
+  {
+    "id": "havas-fullstack",
+    "role": "Full Stack Developer",
+    "company": "Havas Media Group",
+    "location": "Lima, Perú",
+    "startDate": "2020-09",
+    "endDate": "2021-03",
+    "current": false,
+    "summary": "Implemented analytics solutions and cloud-based integrations, and developed web experiences focused on analytics and user behavior tracking.",
+    "highlights": [
+      "Implemented analytics solutions and cloud-based integrations using GCP and Node.js.",
+      "Developed and modified web solutions focused on analytics and user behavior tracking."
+    ],
+    "stack": ["Node.js", "GCP", "Vue.js"]
+  },
+  {
+    "id": "sapia-ai-specialist",
+    "role": "Artificial Intelligence Specialist",
+    "company": "SAPIA / Cognitiva",
+    "location": "Lima, Perú",
+    "startDate": "2021-04",
+    "endDate": "2022-05",
+    "current": false,
+    "summary": "Built cloud-native microservices and distributed systems, integrating event-driven pipelines across SQL and NoSQL data stores.",
+    "highlights": [
+      "Developed cloud-native microservices and distributed systems using Node.js and Docker.",
+      "Built integrations with SQL and NoSQL databases, including PostgreSQL, MongoDB, and Redis.",
+      "Implemented event-driven communication pipelines using Kafka and RabbitMQ.",
+      "Deployed and managed services across Azure, GCP, and IBM Cloud environments."
+    ],
+    "stack": ["Node.js", "Docker", "PostgreSQL", "MongoDB", "Redis", "Kafka", "RabbitMQ", "GCP"]
+  },
+  {
+    "id": "eurotecknia-teacher",
+    "role": "Teacher",
+    "company": "Eurotecknia Academy",
+    "location": "Lima, Perú",
+    "startDate": "2018-08",
+    "endDate": "2019-09",
+    "current": false,
+    "summary": "Instructor in Postgraduate and Undergraduate Degree Programs, teaching Python, Pentaho and Power BI.",
+    "highlights": [
+      "Instructor in Postgraduate Specialization Program and Undergraduate Degree Program.",
+      "Taught Python, PENTAHO and PowerBI with applied techniques and dynamics for the Postgraduate Specialization Program at the University of Piura.",
+      "Prepared didactic support material, and organized and distributed the didactic material.",
+      "Carried out evaluation and complementary activities."
+    ],
+    "stack": ["Python", "Pentaho", "Power BI"]
+  },
+  {
+    "id": "ilatec-software-dev",
+    "role": "Software Developer",
+    "company": "ILATEC",
+    "location": "Lima, Perú",
+    "startDate": "2018-09",
+    "endDate": "2019-08",
+    "current": false,
+    "summary": "Designed and developed Learning Management System (LMS) projects for universities.",
+    "highlights": [
+      "Planned, designed and developed Learning Management System (LMS) projects for universities including La Molina National Agrarian University, National Engineering University, and José Faustino Sánchez Carrión National University.",
+      "Created data models with form integration.",
+      "Prepared technical documentation of the work carried out.",
+      "Trained and advised users of the technological platform, and checked and controlled delivered product quality."
+    ],
+    "stack": ["LMS", "Data Modeling", "Documentation"]
+  },
+  {
+    "id": "stratebi-data-engineer",
+    "role": "Data Engineer",
+    "company": "Stratebi",
+    "location": "Lima, Perú",
+    "startDate": "2018-08",
+    "endDate": "2019-08",
+    "current": false,
+    "summary": "Developed ETL processes and machine learning algorithms, presenting insights through interactive dashboards.",
+    "highlights": [
+      "Developed ETL processes using Python, R and PENTAHO.",
+      "Developed machine learning algorithms.",
+      "Analyzed and explored data, presenting results through dashboards (JavaScript and PowerBI) for decision making.",
+      "Participated in R&D projects in multidisciplinary environments using Agile methodologies."
+    ],
+    "stack": ["Python", "R", "Pentaho", "Power BI", "Machine Learning"]
+  },
+  {
+    "id": "control-system-integration",
+    "role": "Software Developer",
+    "company": "Control System Integration S.A.C.",
+    "location": "Lima, Perú",
+    "startDate": "2018-07",
+    "endDate": "2019-08",
+    "current": false,
+    "summary": "Designed systems that connect to industrial control devices via web interfaces for data extraction and analysis.",
+    "highlights": [
+      "Designed and developed systems connecting to industrial control devices (PLC, ControlLogix) via web interface for data extraction and analysis.",
+      "Built and adapted classes, modules and software components, reusing existing components.",
+      "Provided support and services to third parties such as Goodyear and San Fernando."
+    ],
+    "stack": ["PLC", "ControlLogix", "Web Interfaces"]
+  },
+  {
+    "id": "soluciones-ti-consultant",
+    "role": "Junior Information Technology Consultant",
+    "company": "Soluciones en T.I.",
+    "location": "Caracas, Venezuela",
+    "startDate": "2017-09",
+    "endDate": "2018-03",
+    "current": false,
+    "summary": "Agile development of business applications with BMC Remedy ITSM and scheduling with BMC Control-M.",
+    "highlights": [
+      "Developed business applications with BMC Remedy ITSM using agile methodologies.",
+      "Scheduled operating system tasks with BMC Control-M.",
+      "Provided support, installation and handling of these tools."
+    ],
+    "stack": ["BMC Remedy", "BMC Control-M"]
+  }
+]

@@ -1,0 +1,140 @@
+[
+  {
+    "id": "agitalo-suave",
+    "title": "Agítalo Suave",
+    "description": "A bartending blog I built and grow by myself — brand, design, build and content. From Astro + Tailwind site to CMS integration and audience growth.",
+    "year": 2026,
+    "stack": ["Astro", "Tailwind CSS", "Content strategy & SEO", "CMS"],
+    "featured": true,
+    "status": "active",
+    "links": {
+      "demo": "https://agitalosuave.com",
+      "repos": [
+        {
+          "label": "Site",
+          "url": "https://github.com/scorcherfjk/agitalo-suave"
+        },
+        {
+          "label": "CMS",
+          "url": "https://github.com/Scorcherfjk/agitalo-suave-cms"
+        }
+      ],
+      "caseStudy": "agitalo-suave"
+    }
+  },
+  {
+    "id": "ichigo",
+    "title": "Ichigo",
+    "description": "A full-stack NLP assistant that automatically answers FAQ questions on Discord — from ML model to FastAPI backend to the bot itself, with full project planning and delivery.",
+    "year": 2021,
+    "stack": ["Python", "FastAPI", "scikit-learn", "NLTK", "MongoDB", "Discord.js"],
+    "featured": true,
+    "status": "archived",
+    "links": {
+      "repos": [
+        {
+          "label": "Backend",
+          "url": "https://github.com/Scorcherfjk/ichigo-assistant-backend"
+        },
+        {
+          "label": "Discord bot",
+          "url": "https://github.com/Scorcherfjk/ichigo-assistant-discord"
+        },
+        {
+          "label": "ML model",
+          "url": "https://github.com/Scorcherfjk/ichigo-assistant-model"
+        }
+      ],
+      "caseStudy": "ichigo"
+    }
+  },
+  {
+    "id": "climbing-academy",
+    "title": "Climbing Academy",
+    "description": "A complete marketing site for a climbing academy — courses, membership plans, blog and contact, with a content architecture built to grow.",
+    "year": 2025,
+    "stack": ["Astro", "SolidJS", "Tailwind CSS", "Netlify"],
+    "featured": true,
+    "status": "active",
+    "links": {
+      "demo": "https://climbing-academy.netlify.app/",
+      "repo": "https://github.com/Scorcherfjk/climbing-academy",
+      "caseStudy": "climbing-academy"
+    }
+  },
+  {
+    "id": "platzivideos",
+    "title": "Platzivideos",
+    "description": "A video-streaming-style app built at Platzi's JavaScript school — a React + Redux frontend backed by an Express + MongoDB REST API.",
+    "year": 2020,
+    "stack": ["React", "Redux", "Express", "MongoDB", "Webpack"],
+    "featured": false,
+    "status": "archived",
+    "links": {
+      "repos": [
+        {
+          "label": "Frontend",
+          "url": "https://github.com/Scorcherfjk/platzi-platzivideos-Front"
+        },
+        {
+          "label": "Backend",
+          "url": "https://github.com/Scorcherfjk/platzi-platzivideos-Back"
+        }
+      ]
+    }
+  },
+  {
+    "id": "ip-address-tracker",
+    "title": "IP Address Tracker",
+    "description": "A real-time geolocation tracker that turns any IP address or domain into a precise position on an interactive map.",
+    "year": 2022,
+    "stack": ["React", "Leaflet", "REST APIs", "CSS"],
+    "featured": false,
+    "status": "maintained",
+    "links": {
+      "demo": "https://scorcherfjk.github.io/ip-address-tracker/",
+      "repo": "https://github.com/scorcherfjk/ip-address-tracker",
+      "caseStudy": "ip-address-tracker"
+    }
+  },
+  {
+    "id": "selection-game",
+    "title": "Selection Game",
+    "description": "A browser game / web app mixing Vue.js and Tailwind CSS that tests quick decision-making under pressure.",
+    "year": 2021,
+    "stack": ["Vue.js", "Tailwind CSS", "JavaScript"],
+    "featured": false,
+    "status": "archived",
+    "links": {
+      "demo": "https://scorcherfjk.github.io/juego-seleccion/",
+      "repo": "https://github.com/scorcherfjk/juego-seleccion"
+    }
+  },
+  {
+    "id": "todo-list-vue",
+    "title": "Todo List Vue",
+    "description": "A fast and playful to-do app built with Vue.js featuring local persistence, filters and keyboard shortcuts.",
+    "year": 2021,
+    "stack": ["Vue.js", "JavaScript", "LocalStorage", "CSS"],
+    "featured": false,
+    "status": "archived",
+    "links": {
+      "demo": "https://scorcherfjk.github.io/ToDoListVue/",
+      "repo": "https://github.com/scorcherfjk/ToDoListVue"
+    }
+  },
+  {
+    "id": "weather-app",
+    "title": "Weather App",
+    "description": "A clean, location-aware weather app with 5-day forecasts, geolocation support and responsive layouts.",
+    "year": 2023,
+    "stack": ["React", "OpenWeather API", "Tailwind CSS"],
+    "featured": false,
+    "status": "active",
+    "links": {
+      "demo": "https://scorcherfjk.github.io/weather-app/",
+      "repo": "https://github.com/scorcherfjk/weather-app",
+      "caseStudy": "weather-app"
+    }
+  }
+]
