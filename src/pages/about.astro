@@ -7,7 +7,7 @@ import HobbyCard from "../components/HobbyCard.astro";
 import EducationCard from "../components/EducationCard.astro";
 import CallToAction from "../components/CallToAction.astro";
 import { Icon } from "astro-icon/components";
-import { CV_URL, EMAIL, LANGUAGES, LOCATION, SOCIAL_LINKS } from "../consts";
+import { CV_URL, LANGUAGES, LINKEDIN_URL, LOCATION, SOCIAL_LINKS } from "../consts";
 
 const hobbies = (await getCollection("hobbies")).sort(
   (a, b) => Number(b.data.featured) - Number(a.data.featured),
@@ -19,12 +19,7 @@ const education = (await getCollection("education")).sort((a, b) =>
 
 const quickFacts = [
   { icon: "location", label: "Based in", value: LOCATION },
-  { icon: "mail", label: "Email", value: EMAIL, href: `mailto:${EMAIL}` },
-  {
-    icon: "briefcase",
-    label: "Currently",
-    value: "Senior Backend Engineer at Globant",
-  },
+  { icon: "briefcase", label: "Currently", value: "Senior Backend Engineer at Globant" },
   {
     icon: "code",
     label: "Focus",
@@ -84,24 +79,27 @@ const quickFacts = [
                 </span>
                 <div>
                   <p class="text-xs text-muted">{fact.label}</p>
-                  {
-                    fact.href ? (
-                      <a
-                        href={fact.href}
-                        class="text-sm font-medium text-primary transition hover:text-accent"
-                      >
-                        {fact.value}
-                      </a>
-                    ) : (
-                      <p class="text-sm font-medium text-primary">
-                        {fact.value}
-                      </p>
-                    )
-                  }
+                  <p class="text-sm font-medium text-primary">{fact.value}</p>
                 </div>
               </li>
             ))
           }
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 grid size-8 shrink-0 place-items-center rounded-md bg-surface-alt">
+              <Icon name="linkedin" class="size-4 text-accent-soft" />
+            </span>
+            <div>
+              <p class="text-xs text-muted">Contact</p>
+              <a
+                href={LINKEDIN_URL}
+                target="_blank"
+                rel="noreferrer"
+                class="text-sm font-medium text-primary transition hover:text-accent"
+              >
+                Connect on LinkedIn
+              </a>
+            </div>
+          </li>
         </ul>
 
         <div class="mt-8 border-t border-border pt-6">
@@ -206,9 +204,10 @@ const quickFacts = [
   <section class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
     <CallToAction
       title="Want to work together?"
-      description="Whether it's a product, a class, or a coffee — I'd love to hear from you."
-      primaryText="Email me"
-      primaryHref={`mailto:${EMAIL}`}
+      description="Whether it's a product, a class, or a coffee — send me a message on LinkedIn."
+      primaryText="Connect on LinkedIn"
+      primaryHref={LINKEDIN_URL}
+      primaryExternal
       secondaryText="See my projects"
       secondaryHref="/projects"
     />

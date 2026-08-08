@@ -68,7 +68,7 @@ const { title, description } = Astro.props;
               <a
                 href={link.url}
                 rel="noreferrer"
-                target={link.url.startsWith("http") ? "_blank" : undefined}
+                target="_blank"
                 aria-label={link.label}
                 class="grid size-10 place-items-center rounded-md border border-border bg-surface text-muted transition hover:border-accent/60 hover:text-accent"
               >

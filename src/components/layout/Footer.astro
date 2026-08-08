@@ -1,6 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
-import { EMAIL, FOOTER_LINKS, NAME, SOCIAL_LINKS } from "../../consts";
+import { FOOTER_LINKS, LINKEDIN_URL, NAME, SOCIAL_LINKS } from "../../consts";
 
 const year = new Date().getFullYear();
 ---
@@ -25,7 +25,7 @@ const year = new Date().getFullYear();
                 <a
                   href={link.url}
                   rel="noreferrer"
-                  target={link.url.startsWith("http") ? "_blank" : undefined}
+                  target="_blank"
                   aria-label={link.label}
                   class="grid size-9 place-items-center rounded-md border border-border text-muted transition hover:border-accent/60 hover:text-accent"
                 >
@@ -66,14 +66,16 @@ const year = new Date().getFullYear();
           Get in touch
         </p>
         <p class="mt-4 text-sm leading-relaxed text-muted">
-          Have a project, a role, or just want to say hi? My inbox is open.
+          Have a project, a role, or just want to say hi? Let's connect.
         </p>
         <a
-          href={`mailto:${EMAIL}`}
+          href={LINKEDIN_URL}
+          target="_blank"
+          rel="noreferrer"
           class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-accent transition hover:text-accent-soft"
         >
-          <Icon name="mail" class="size-4" />
-          {EMAIL}
+          <Icon name="linkedin" class="size-4" />
+          Connect on LinkedIn
         </a>
       </div>
     </div>

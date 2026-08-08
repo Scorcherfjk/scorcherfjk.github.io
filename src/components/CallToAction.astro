@@ -4,12 +4,20 @@ interface Props {
   description: string;
   primaryText: string;
   primaryHref: string;
+  primaryExternal?: boolean;
   secondaryText?: string;
   secondaryHref?: string;
 }
 
-const { title, description, primaryText, primaryHref, secondaryText, secondaryHref } =
-  Astro.props;
+const {
+  title,
+  description,
+  primaryText,
+  primaryHref,
+  primaryExternal,
+  secondaryText,
+  secondaryHref,
+} = Astro.props;
 ---
 
 <section
@@ -25,6 +33,8 @@ const { title, description, primaryText, primaryHref, secondaryText, secondaryHr
   <div class="mt-8 flex flex-wrap justify-center gap-4">
     <a
       href={primaryHref}
+      target={primaryExternal ? "_blank" : undefined}
+      rel={primaryExternal ? "noreferrer" : undefined}
       class="inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3 text-sm font-semibold text-background transition hover:bg-accent-soft"
     >
       {primaryText}

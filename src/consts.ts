@@ -6,7 +6,6 @@ export const NAME = "Francisco Javier De Freitas";
 export const SHORT_NAME = "Francisco J. De Freitas";
 export const ROLE = "Senior Backend Engineer";
 export const LOCATION = "Lima, Peru";
-export const EMAIL = "fjaviercale@gmail.com";
 export const YEARS_OF_EXPERIENCE = "9+";
 
 export const CV_URL = "/cv/francisco-de-freitas-cv.pdf";
@@ -17,6 +16,8 @@ export const LANGUAGES = [
   { name: "Portuguese", flag: "🇵🇹", level: "European · B2" },
 ] as const;
 
+export const LINKEDIN_URL = "https://www.linkedin.com/in/fjavier-de-freitas";
+
 export const SOCIAL_LINKS = [
   {
     url: "https://github.com/scorcherfjk",
@@ -24,14 +25,9 @@ export const SOCIAL_LINKS = [
     icon: "github",
   },
   {
-    url: "https://www.linkedin.com/in/fjavier-de-freitas",
+    url: LINKEDIN_URL,
     label: "LinkedIn",
     icon: "linkedin",
-  },
-  {
-    url: `mailto:${EMAIL}`,
-    label: "Email",
-    icon: "mail",
   },
 ] as const;
 
