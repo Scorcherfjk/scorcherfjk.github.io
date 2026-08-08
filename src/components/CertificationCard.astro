@@ -80,4 +80,37 @@ const { data } = cert;
       )
     }
   </div>
+
+  {
+    (data.casePdf || data.scorecard) && (
+      <div class="mt-4 flex flex-wrap gap-4 border-t border-border pt-4 text-sm">
+        {
+          data.casePdf && (
+            <a
+              href={data.casePdf}
+              target="_blank"
+              rel="noreferrer"
+              class="inline-flex items-center gap-1.5 text-muted transition hover:text-accent"
+            >
+              <Icon name="external-link" class="size-4" />
+              Case study (PDF)
+            </a>
+          )
+        }
+        {
+          data.scorecard && (
+            <a
+              href={data.scorecard}
+              target="_blank"
+              rel="noreferrer"
+              class="inline-flex items-center gap-1.5 text-muted transition hover:text-accent"
+            >
+              <Icon name="external-link" class="size-4" />
+              TCO scorecard
+            </a>
+          )
+        }
+      </div>
+    )
+  }
 </article>

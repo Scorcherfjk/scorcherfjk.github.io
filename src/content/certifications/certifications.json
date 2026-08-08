@@ -29,6 +29,8 @@
     "category": "Database",
     "pdf": "/certifications/mongodb-si-architect.pdf",
     "evaluation": "Architecture case study reviewed by MongoDB",
+    "casePdf": "/certifications/mongodb-si-architect-case.pdf",
+    "scorecard": "/certifications/mongodb-si-architect-TCO-scorecard.xlsx",
     "skills": ["MongoDB", "Architecture", "Performance", "Security"]
   },
   {
