@@ -1,11 +1,21 @@
-export const SITE_TITLE = "FJavier De Freitas";
+export const SITE_TITLE = "Francisco Javier De Freitas";
 export const SITE_DESCRIPTION =
-  "Full-stack developer and programming teacher. I build reliable web products, teach, and keep learning in public.";
+  "Senior Backend Engineer with 9+ years building scalable distributed systems and cloud-native applications with Node.js and TypeScript.";
 
-export const NAME = "FJavier De Freitas";
-export const ROLE = "Full-Stack Developer & Programming Teacher";
-export const LOCATION = "Caracas, Venezuela";
-export const EMAIL = "fjavier.defreitas@gmail.com";
+export const NAME = "Francisco Javier De Freitas";
+export const SHORT_NAME = "Francisco J. De Freitas";
+export const ROLE = "Senior Backend Engineer";
+export const LOCATION = "Lima, Peru";
+export const EMAIL = "fjaviercale@gmail.com";
+export const YEARS_OF_EXPERIENCE = "9+";
+
+export const CV_URL = "/cv/francisco-de-freitas-cv.pdf";
+
+export const LANGUAGES = [
+  { name: "Spanish", flag: "🇪🇸", level: "Native" },
+  { name: "English", flag: "🇬🇧", level: "B2" },
+  { name: "Portuguese", flag: "🇵🇹", level: "European · B2" },
+] as const;
 
 export const SOCIAL_LINKS = [
   {
@@ -14,14 +24,9 @@ export const SOCIAL_LINKS = [
     icon: "github",
   },
   {
-    url: "https://www.linkedin.com/in/fjavierdefreitas",
+    url: "https://www.linkedin.com/in/fjavier-de-freitas",
     label: "LinkedIn",
     icon: "linkedin",
-  },
-  {
-    url: "https://twitter.com/fjdfreitas",
-    label: "Twitter / X",
-    icon: "twitter",
   },
   {
     url: `mailto:${EMAIL}`,
@@ -51,35 +56,35 @@ export const FOOTER_LINKS = [
 ] as const;
 
 export const SKILLS = {
-  languages: [
-    "JavaScript",
-    "TypeScript",
-    "Python",
-    "Swift",
-    "Dart",
-    "SQL",
-  ],
+  languages: ["TypeScript", "JavaScript", "Python", "SQL"],
   frontend: [
     "React",
     "Vue.js",
+    "Astro",
+    "SolidJS",
     "Redux",
-    "GraphQL",
     "Tailwind CSS",
-    "Sass",
     "Webpack",
-    "Figma",
+    "Leaflet",
   ],
   backend: [
     "Node.js",
-    "Django",
+    "NestJS",
+    "Express",
+    "FastAPI",
     "REST APIs",
     "GraphQL",
-    "Docker",
-    "Kubernetes",
-    "Firebase",
-    "TensorFlow",
+    "Serverless",
+    "Discord.js",
   ],
-  databases: ["MongoDB", "MySQL", "PostgreSQL", "Redis", "SQL Server"],
-  cloud: ["Google Cloud Platform", "GitHub Actions", "Netlify"],
-  tools: ["Git", "JWT", "Google Analytics", "Google Tag Manager"],
+  databases: ["PostgreSQL", "MongoDB", "Redis"],
+  aiMl: ["scikit-learn", "NLTK", "spaCy", "NLP"],
+  content: ["Strapi", "Supabase", "Cloudinary", "Headless CMS", "SEO"],
+  cloud: ["AWS", "GCP", "Azure", "Netlify", "Kafka", "RabbitMQ"],
+  engineering: [
+    "Microservices",
+    "Event-Driven Architecture",
+    "Hexagonal Architecture",
+    "Docker",
+  ],
 } as const;

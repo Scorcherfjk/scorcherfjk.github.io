@@ -23,15 +23,19 @@ pnpm check       # run astro check (typecheck)
 
 ## Content
 
-All content lives in `src/content/` as Markdown files with typed frontmatter:
+Most content lives in `src/content/` as a single typed JSON file per collection. Only `case-studies` keeps Markdown files (they have long-form bodies):
 
-| Collection       | Path                     | Purpose                              |
-| ---------------- | ------------------------ | ------------------------------------ |
-| `projects`       | `content/projects/`      | Project cards (name, stack, links)   |
-| `caseStudies`    | `content/case-studies/`  | Long-form project breakdowns         |
-| `experience`     | `content/experience/`    | Work history timeline                |
-| `certifications` | `content/certifications/`| Certs linked to PDFs                 |
-| `hobbies`        | `content/hobbies/`       | Hobbies + skills gained              |
+| Collection       | Path                       | Format | Purpose                            |
+| ---------------- | -------------------------- | ------ | ---------------------------------- |
+| `projects`       | `content/projects/projects.json`       | JSON   | Project cards (name, stack, links) |
+| `caseStudies`    | `content/case-studies/`    | Markdown | Long-form project breakdowns     |
+| `experience`     | `content/experience/experience.json`   | JSON   | Work history timeline              |
+| `certifications` | `content/certifications/certifications.json` | JSON | Certs linked to PDFs       |
+| `courses`        | `content/courses/courses.json`         | JSON   | Courses, specializations & Udemy   |
+| `hobbies`        | `content/hobbies/hobbies.json`         | JSON   | Hobbies + skills gained            |
+| `education`      | `content/education/education.json`     | JSON   | University degree                  |
+
+Each JSON file is an array of entries; every entry needs an `id` field (Astro's `file()` loader uses it as the entry id).
 
 ### Certifications (PDFs)
 

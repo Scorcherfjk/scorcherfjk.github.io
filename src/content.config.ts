@@ -1,25 +1,27 @@
 import { defineCollection } from "astro:content";
-import { glob } from "astro/loaders";
+import { file, glob } from "astro/loaders";
 import {
   caseStudySchema,
   certificationSchema,
+  courseSchema,
+  educationSchema,
   experienceSchema,
   hobbySchema,
   projectSchema,
 } from "./schemas";
 
 const projects = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/projects" }),
+  loader: file("src/content/projects/projects.json"),
   schema: projectSchema,
 });
 
 const experience = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/experience" }),
+  loader: file("src/content/experience/experience.json"),
   schema: experienceSchema,
 });
 
 const certifications = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/certifications" }),
+  loader: file("src/content/certifications/certifications.json"),
   schema: certificationSchema,
 });
 
@@ -29,8 +31,18 @@ const caseStudies = defineCollection({
 });
 
 const hobbies = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/hobbies" }),
+  loader: file("src/content/hobbies/hobbies.json"),
   schema: hobbySchema,
+});
+
+const courses = defineCollection({
+  loader: file("src/content/courses/courses.json"),
+  schema: courseSchema,
+});
+
+const education = defineCollection({
+  loader: file("src/content/education/education.json"),
+  schema: educationSchema,
 });
 
 export const collections = {
@@ -39,4 +51,6 @@ export const collections = {
   certifications,
   caseStudies,
   hobbies,
+  courses,
+  education,
 };

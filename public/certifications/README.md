@@ -1,13 +1,10 @@
-Drop your certification PDFs here so the site can link to them.
+Certification PDFs served at https://scorcherfjk.github.io/certifications/<file>.pdf
+and opened in a new tab. The filename must match the `pdf` field in
+`src/content/certifications/*.md`.
 
-Naming convention: keep the filename referenced in
-`src/content/certifications/*.md` (the `pdf` field), e.g.:
+In place:
 
-  /certifications/aws-cloud-practitioner.pdf
-  /certifications/meta-frontend-developer.pdf
-  /certifications/tensorflow-developer.pdf
-  /certifications/ios-swift.pdf
-  /certifications/fullstack-javascript.pdf
-
-They are served at https://scorcherfjk.github.io/certifications/<file>.pdf
-and open in a new tab.
+  azure-ai-900.pdf                       → Azure AI-900 (Microsoft)
+  mongodb-associate-developer.pdf        → MongoDB Associate Developer
+  mongodb-si-associate.pdf               → MongoDB SI Associate
+  mongodb-si-architect.pdf               → MongoDB SI Architect
