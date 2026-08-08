@@ -4,7 +4,7 @@ project: "ip-address-tracker"
 summary: "How I took a static challenge and turned it into a fast, production-quality geolocation tool with a clean data flow."
 role: "Solo developer, design to deploy"
 timeline: "2 weeks"
-year: 2022
+year: 2020
 stack: ["React", "Leaflet", "IP Geolocation API", "CSS"]
 highlights:
   - "Async data flow with loading and error states."

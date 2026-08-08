@@ -4,7 +4,7 @@ project: "weather-app"
 summary: "Turning a weather API into a calm, useful product — with geolocation, smart defaults and a design people actually enjoy using."
 role: "Solo developer, design to deploy"
 timeline: "3 weeks"
-year: 2023
+year: 2020
 stack: ["React", "OpenWeather API", "Tailwind CSS"]
 highlights:
   - "Geolocation with graceful fallback to a default city."
