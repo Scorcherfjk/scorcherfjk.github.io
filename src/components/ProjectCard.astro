@@ -61,7 +61,26 @@ const { data } = project;
       )
     }
     {
-      data.links?.repo && (
+      data.links?.repos && (
+        <ul class="flex flex-wrap items-center gap-x-5 gap-y-3 text-sm">
+          {data.links.repos.map((repo) => (
+            <li>
+              <a
+                href={repo.url}
+                target="_blank"
+                rel="noreferrer"
+                class="inline-flex items-center gap-1.5 text-muted transition hover:text-accent"
+              >
+                <Icon name="github" class="size-4" />
+                {repo.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+    {
+      data.links?.repo && !data.links?.repos && (
         <a
           href={data.links.repo}
           target="_blank"

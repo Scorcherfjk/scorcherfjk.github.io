@@ -9,7 +9,7 @@ import Skills from "../components/Skills.astro";
 import CallToAction from "../components/CallToAction.astro";
 import { Icon } from "astro-icon/components";
 import { formatRange } from "../utils";
-import { NAME, SITE_DESCRIPTION } from "../consts";
+import { NAME, SITE_DESCRIPTION, YEARS_OF_EXPERIENCE, LANGUAGES } from "../consts";
 
 const projects = (await getCollection("projects")).sort(
   (a, b) => b.data.year - a.data.year,
@@ -25,16 +25,11 @@ const certifications = (await getCollection("certifications")).sort((a, b) =>
 );
 const featuredCertifications = certifications.slice(0, 3);
 
-const startYear = Math.min(
-  ...experience.map((entry) => Number(entry.data.startDate.slice(0, 4))),
-);
-const yearsOfExperience = new Date().getFullYear() - startYear;
-
 const stats = [
-  { label: "Years building software", value: String(yearsOfExperience) },
+  { label: "Years building software", value: YEARS_OF_EXPERIENCE },
   { label: "Projects shipped", value: String(projects.length) },
   { label: "Certifications", value: String(certifications.length) },
-  { label: "Students mentored", value: "100+" },
+  { label: "Languages spoken", value: String(LANGUAGES.length) },
 ];
 ---
 

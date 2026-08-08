@@ -44,15 +44,19 @@ const { data } = cert;
   }
 
   <div class="mt-6 flex flex-1 items-end gap-4 text-sm">
-    <a
-      href={data.pdf}
-      target="_blank"
-      rel="noreferrer"
-      class="inline-flex items-center gap-2 rounded-md bg-accent px-4 py-2 font-semibold text-background transition hover:bg-accent-soft"
-    >
-      <Icon name="download" class="size-4" />
-      View PDF
-    </a>
+    {
+      data.pdf && (
+        <a
+          href={data.pdf}
+          target="_blank"
+          rel="noreferrer"
+          class="inline-flex items-center gap-2 rounded-md bg-accent px-4 py-2 font-semibold text-background transition hover:bg-accent-soft"
+        >
+          <Icon name="external-link" class="size-4" />
+          View certificate
+        </a>
+      )
+    }
     {
       data.credentialUrl && (
         <a

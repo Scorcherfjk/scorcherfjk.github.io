@@ -115,7 +115,24 @@ const meta = [
         )
       }
       {
-        data.links?.repo && (
+        data.links?.repos && (
+          <div class="flex flex-wrap gap-2">
+            {data.links.repos.map((repo) => (
+              <a
+                href={repo.url}
+                target="_blank"
+                rel="noreferrer"
+                class="inline-flex items-center gap-2 rounded-md border border-border bg-surface px-6 py-3 text-sm font-semibold text-primary transition hover:border-accent/60 hover:text-accent"
+              >
+                <Icon name="github" class="size-4" />
+                {repo.label}
+              </a>
+            ))}
+          </div>
+        )
+      }
+      {
+        data.links?.repo && !data.links?.repos && (
           <a
             href={data.links.repo}
             target="_blank"

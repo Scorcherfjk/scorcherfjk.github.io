@@ -10,8 +10,7 @@ export function getPersonJsonLd(site: URL): string {
     url: site.origin,
     sameAs: [
       "https://github.com/scorcherfjk",
-      "https://www.linkedin.com/in/fjavierdefreitas",
-      "https://twitter.com/fjdfreitas",
+      "https://www.linkedin.com/in/fjavier-de-freitas",
     ],
   };
   return JSON.stringify(jsonLd);

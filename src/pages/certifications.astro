@@ -2,7 +2,9 @@
 import { getCollection } from "astro:content";
 import MainLayout from "../layouts/MainLayout.astro";
 import PageHeader from "../components/PageHeader.astro";
+import SectionHeading from "../components/SectionHeading.astro";
 import CertificationCard from "../components/CertificationCard.astro";
+import CourseCard from "../components/CourseCard.astro";
 import CallToAction from "../components/CallToAction.astro";
 
 const certifications = (await getCollection("certifications")).sort((a, b) =>
@@ -12,6 +14,14 @@ const certifications = (await getCollection("certifications")).sort((a, b) =>
 const categories = [
   ...new Set(certifications.map((cert) => cert.data.category)),
 ];
+
+const courses = (await getCollection("courses")).sort((a, b) => {
+  const typeDiff =
+    (a.data.type === "Specialization" ? 0 : 1) -
+    (b.data.type === "Specialization" ? 0 : 1);
+  if (typeDiff !== 0) return typeDiff;
+  return (b.data.date ?? "").localeCompare(a.data.date ?? "");
+});
 ---
 
 <MainLayout
@@ -21,7 +31,7 @@ const categories = [
   <PageHeader
     eyebrow="Credentials"
     title="Certifications"
-    description="Courses and certifications I've completed. Every one opens its certificate as a PDF in a new tab."
+    description="Certifications, courses and specializations I've completed — certificates open as PDFs and courses link to their credentials."
   />
 
   <section class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
@@ -46,7 +56,25 @@ const categories = [
     </div>
   </section>
 
-  <section class="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:px-8 lg:pb-24">
+  <section class="border-t border-border bg-surface">
+    <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+      <SectionHeading
+        eyebrow="Learning"
+        title="Courses & Specializations"
+        description="Specializations and courses I've completed to stay sharp — in cloud engineering, AI fundamentals and applied LLM development."
+      />
+
+      <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {
+          courses.map((course) => (
+            <CourseCard course={course} />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
     <CallToAction
       title="Always learning"
       description="I'm currently working on my next certification. Check back soon, or get in touch if you want to talk shop."
