@@ -7,6 +7,7 @@ export const certificationSchema = z.object({
   category: z.string(),
   pdf: z.string().optional(),
   credentialUrl: z.url().optional(),
+  evaluation: z.string().optional(),
   skills: z.array(z.string()).optional(),
 });
 

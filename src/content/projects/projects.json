@@ -93,8 +93,7 @@
     "status": "maintained",
     "links": {
       "demo": "https://scorcherfjk.github.io/ip-address-tracker/",
-      "repo": "https://github.com/scorcherfjk/ip-address-tracker",
-      "caseStudy": "ip-address-tracker"
+      "repo": "https://github.com/scorcherfjk/ip-address-tracker"
     }
   },
   {
@@ -133,8 +132,7 @@
     "status": "active",
     "links": {
       "demo": "https://scorcherfjk.github.io/weather-app/",
-      "repo": "https://github.com/scorcherfjk/weather-app",
-      "caseStudy": "weather-app"
+      "repo": "https://github.com/scorcherfjk/weather-app"
     }
   }
 ]
