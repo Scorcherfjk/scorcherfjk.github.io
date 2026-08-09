@@ -30,7 +30,7 @@ links:
 
 ## Overview
 
-Agítalo Suave is a personal platform and blog about cocktails, built and operated end to end — brand, design, frontend, CMS, content strategy and distribution. It started as a record of my mixology learning and grew into a CMS-driven publishing system that keeps the public site statically generated.
+Agítalo Suave is a personal platform and blog about cocktails, built and operated end to end — brand, design, frontend, CMS, content strategy and distribution. It began as a record of my mixology learning and is now a CMS-driven publishing system that keeps the public site statically generated.
 
 Where Climbing Academy proved the static-first, content-driven approach, this project took it further: it is a product I maintain over time, so the architecture had to support growth — content, SEO, testing, infrastructure and a publishing workflow — without the operational overhead of a traditional dynamic application.
 
@@ -234,9 +234,9 @@ Social channels (Facebook, Instagram, TikTok) are used as distribution channels.
 
 ## Outcome
 
-Agítalo Suave evolved from a static Astro blog into a complete personal publishing platform: content is authored in Strapi, media is handled by Cloudinary, and publishing is a save-then-publish flow that triggers a static rebuild — while visitors still receive a statically generated site.
+Agítalo Suave is an **ongoing personal project**, and the architecture described here is its current state rather than a final form. Publishing today is a save-then-publish flow: content is authored in Strapi, media is handled by Cloudinary, and a webhook triggers a static rebuild — while visitors still receive a statically generated site.
 
-It is an **ongoing project**. Current work spans content creation, SEO, analytics, monetization, framework updates and content distribution. The architecture is not presented as a final state; it keeps changing as the requirements change.
+Current work spans content creation, SEO, analytics, monetization, framework updates and content distribution. The system continues to evolve alongside those requirements.
 
 ## What I learned
 
@@ -246,16 +246,16 @@ It is an **ongoing project**. Current work spans content creation, SEO, analytic
 * **Infrastructure can be intentionally small** — narrow responsibilities, managed services and build-time content consumption keep the operational surface small.
 * **Maintenance is part of the project** — framework upgrades, compatibility fixes and SEO are recurring work for a live product.
 
+The most valuable lesson was recognizing when the current solution is no longer the right one, understanding why, and evolving the system without adding complexity for its own sake.
+
 ## What came next
 
-The progression from Climbing Academy to Agítalo Suave was not about learning another framework. It was about taking an architecture that worked, using it in a real personal project, observing where it became limiting, and evolving it without abandoning the principles that worked.
+The progression from Climbing Academy to Agítalo Suave was about taking an architecture that worked, applying it to a real personal project, observing where it became limiting, and evolving it without abandoning the principles that worked.
 
 ```text
 Climbing Academy → Static-first architecture → Agítalo Suave → Growing content requirements → CMS integration → Ongoing platform
 ```
 
 ## Final thoughts
-
-Agítalo Suave started as a simple personal blog. It grew into a publishing platform — and it is still evolving. The most valuable part has not been any individual technology, but the ability to recognize when the current solution is no longer the right one, understand why, and evolve the system without adding complexity for its own sake.
 
 **The project started with Markdown. It grew into a publishing platform. And it is still evolving.**
