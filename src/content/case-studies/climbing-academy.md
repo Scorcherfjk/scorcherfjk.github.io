@@ -1,22 +1,22 @@
 ---
 title: "Climbing Academy: a marketing site built to convert"
 project: "climbing-academy"
-summary: "A complete marketing site for a climbing academy — courses, membership plans, blog and contact, built with Astro and SolidJS."
+summary: "A complete marketing site concept for a climbing academy — homepage, membership plans, services, blog and contact — designed, built and deployed with a static-first Astro architecture."
 role: "Solo developer"
 timeline: "Feb 5 – Apr 25, 2025"
 year: 2025
-stack: ["Astro", "SolidJS", "Tailwind CSS", "Netlify"]
+stack: ["Astro", "TypeScript", "Tailwind CSS", "MDX", "Netlify"]
 highlights:
-  - "Content architecture built to grow."
-  - "Courses, membership plans, blog and contact sections."
-  - "Deployed and iterated on Netlify."
+  - "Evaluated Astro against the requirements of a real content-heavy product and adopted a static-first architecture."
+  - "Content-driven pages: 7 MDX blog posts and 4 legal pages generated from Content Collections via dynamic [slug] routes."
+  - "Optimized AVIF asset pipeline with no client-side framework runtime."
 metrics:
-  - label: "Stack"
-    value: "JAMstack"
   - label: "Pages"
     value: "13"
   - label: "Blog posts"
     value: "7"
+  - label: "Stack"
+    value: "JAMstack"
   - label: "Project duration"
     value: "2.5 mo"
 links:
@@ -26,596 +26,189 @@ links:
 
 ## Overview
 
-Climbing Academy was a self-initiated project born from a simple observation: the website of the climbing academy where I practiced was not providing the kind of experience I thought it could.
+Climbing Academy is a self-initiated project: a complete marketing website for a climbing academy, designed, built and deployed as a realistic alternative to the academy's existing site.
 
-At the same time, I wanted to learn **Astro** and explore how modern static-first websites could be built with a strong focus on performance, maintainability, and content management.
+The scope covered the pages a real academy needs — homepage, academy information, membership plans, services, trial classes, open climbing sessions, FAQs, reviews, a contact form, legal pages and a content-driven blog.
 
-Instead of creating another tutorial project, I decided to combine both goals.
-
-I designed and developed a complete website concept for a climbing academy, including its main pages, membership plans, services, FAQs, contact form, reviews, legal pages, and a content-driven blog.
-
-The project became a practical environment where I could learn Astro by building something that resembled a real product rather than following isolated examples.
+Beyond the product, I used the project as a practical way to evaluate **Astro** against the requirements of a real content-heavy website: static-first rendering, minimal client-side JavaScript, and a content layer that separates management from presentation.
 
 ## The idea
 
-I was practicing climbing at an academy whose website had significant room for improvement.
+The project started with a real-world observation: the climbing academy where I trained had a website that was visually dated and functionally limited.
 
-I thought:
+Rather than just noticing the problem, I used it as an opportunity to design something better and to evaluate the tooling involved.
 
-> I can build something better, and I can use the opportunity to learn a new technology.
+> I can build something better — and use the opportunity to evaluate a new technology stack.
 
-I started researching solutions for building fast, content-focused websites. One of my goals was to understand the **Jamstack** approach and learn how static generation could be used to create an efficient website without requiring a traditional backend for every page request.
+The evaluation followed this path:
 
-Astro quickly stood out as a good fit.
+```text
+Real-world observation
+        ↓
+Opportunity to improve the experience
+        ↓
+Technology research
+        ↓
+Astro + static-first architecture
+        ↓
+Implementation
+        ↓
+Content architecture
+        ↓
+Performance optimization
+        ↓
+Deployment
+```
 
-Its static-first architecture, component model, content capabilities, and minimal client-side JavaScript made it particularly interesting for the type of website I wanted to build.
-
-I enrolled in an Astro course, learned the fundamentals, and started applying them directly to the project.
+I researched approaches for building fast, content-focused sites, with particular interest in the JAMstack model and static generation. Astro stood out because most of the site could be generated at build time and served as static assets, while its component model, Markdown/MDX support and Content Collections covered the content-heavy requirements without a per-request backend.
 
 ## Goals
 
-The project had two main objectives.
+The project had two parallel sets of goals.
 
-### Learning objectives
+**Product** — a realistic marketing site: a strong landing page, academy information, membership plans, services, trial classes, open climbing, FAQs, reviews, a contact form, a blog, legal documentation, responsive layouts and optimized assets.
 
-I wanted to:
+**Technical** — evaluate Astro and the surrounding tooling (TypeScript, MDX, Content Collections, Tailwind CSS, PNPM, Netlify) in the context of a real product rather than isolated exercises.
 
-* Learn Astro from the ground up.
-* Understand static site generation.
-* Explore the Jamstack approach.
-* Learn how to build reusable Astro components.
-* Work with Markdown and MDX content.
-* Learn Astro's content collections.
-* Improve my understanding of web performance.
-* Experiment with optimized image formats.
-* Learn PNPM.
-* Deploy an Astro application to Netlify.
-* Structure a frontend project using TypeScript.
-
-### Product objectives
-
-I also wanted to create a realistic website for a climbing academy that could include:
-
-* A strong landing page.
-* Academy information.
-* Membership plans.
-* Services.
-* Trial classes.
-* Open climbing sessions.
-* FAQs.
-* Reviews.
-* Contact information and a contact form.
-* A blog.
-* Legal documentation.
-* Responsive layouts.
-* Optimized assets.
-
-The idea was to eventually show the finished project to the instructors at the academy and potentially use it as a starting point for a real website.
-
-## Why Astro?
-
-Before starting the implementation, I researched several approaches for building content-heavy websites.
-
-I was particularly interested in:
-
-* Performance.
-* Static generation.
-* Simplicity.
-* Low client-side JavaScript overhead.
-* A good developer experience.
-* Easy content management.
-* The ability to deploy without managing a traditional server.
-
-Astro aligned very well with those requirements.
-
-Its static-first approach meant that most of the website could be generated during the build process and delivered as static assets.
-
-This was particularly appropriate for a website where most content did not need to be generated dynamically on every request.
-
-After learning the fundamentals through an Astro course, I decided to use the project as a practical way to deepen my understanding of the framework.
+The plan was to show the finished concept to the academy's instructors as a starting point for a real website.
 
 ## Technology stack
 
-The project was built with:
+* **Astro** — static-first web framework; most pages rendered at build time.
+* **TypeScript** — typed data structures shared across components (`src/interfaces`).
+* **Tailwind CSS** — utility-first styling (v4 via the Vite plugin).
+* **MDX** — blog and legal content authoring.
+* **PNPM** — local package management, with `pnpm-lock.yaml` committed for reproducible installs.
+* **Netlify** — hosting and deployment.
+* **AVIF** — optimized image assets through Astro's asset pipeline.
 
-* **Astro** — Static-first web framework.
-* **SolidJS** — Reactive islands for interactive components via the `@astrojs/solid-js` integration.
-* **TypeScript** — Type safety and shared data structures.
-* **Tailwind CSS** — Utility-first styling.
-* **MDX** — Blog and content authoring.
-* **PNPM** — Package management.
-* **Netlify** — Deployment and hosting.
-* **AVIF** — Optimized image assets.
+The site has no backend or database: content is generated statically at build time.
 
-The project did not use a backend or database because the majority of its content could be generated statically.
+One decision worth noting: I initially configured the `@astrojs/solid-js` integration to evaluate reactive islands for interactive components. The final implementation needed almost no client interactivity — the FAQ accordion uses native `<details>` and the mobile navigation uses a small inline script — so no framework runtime ships to the browser. This is why SolidJS does not appear in the final stack.
 
-## Architecture
+## Architecture & Content
 
-The project evolved from a collection of static pages into a structured, content-driven Astro application.
-
-The source code was organized around several clear responsibilities:
+The project evolved from a set of static pages into a content-driven application, organized by responsibility:
 
 ```text
 src/
-├── assets/        # Optimized images and visual assets
+├── assets/        # Optimized images
 ├── components/    # Reusable UI components
-├── content/       # Blog and legal content
+├── content/       # Blog and legal content (MDX)
 ├── icons/         # SVG icons
-├── interfaces/    # TypeScript interfaces
+├── interfaces/    # TypeScript contracts
 ├── layouts/       # Shared page layouts
 ├── pages/         # Routes and dynamic pages
-├── styles/        # Global and blog-specific styles
+├── styles/        # Global and blog styles
 └── utils/         # Shared utilities
 ```
 
-This separation allowed the project to keep presentation, content, routing, types, styles, and utilities relatively independent from each other.
+### Static pages and components
 
-## Starting with static pages
+The initial implementation started with the main pages as static routes — homepage, academy, membership plans, services, open climbing, trial classes, FAQs, contact, blog, legal and a custom 404 page.
 
-The initial implementation started with the site's main pages.
-
-At this stage, the primary goal was understanding Astro's component model and getting the overall structure of the website working.
-
-The project included pages for:
-
-* The homepage.
-* The academy.
-* Membership plans.
-* Services.
-* Open climbing.
-* Trial classes.
-* FAQs.
-* Contact.
-* Blog.
-* Legal documentation.
-* A custom 404 page.
-
-The initial pages were built statically, allowing me to focus on understanding Astro before introducing a more sophisticated content architecture.
-
-## Component architecture
-
-As the project grew, I began extracting recurring pieces of the interface into reusable Astro components.
-
-The component structure included elements such as:
+As the structure emerged, recurring UI was extracted into reusable components:
 
 ```text
 src/components/
-├── Accordion.astro
-├── BlogCard.astro
-├── BlogEntries.astro
-├── CallToAction.astro
-├── ContactForm.astro
-├── Hero.astro
-├── PlanCard.astro
-├── Plans.astro
-├── Reviews.astro
-└── layout/
-    ├── Analytics.astro
-    ├── Footer.astro
-    └── Navbar.astro
+├── Accordion.astro   BlogCard.astro     BlogEntries.astro
+├── CallToAction.astro  ContactForm.astro  Hero.astro
+├── PlanCard.astro    Plans.astro        Reviews.astro
+└── layout/           Analytics.astro    Footer.astro    Navbar.astro
 ```
 
-This allowed common UI patterns to be reused across different pages instead of duplicating markup.
-
-For example, membership plans could be represented using reusable `PlanCard` components, while blog previews could use `BlogCard` components.
-
-This also made the pages themselves more focused on composition rather than implementation details.
-
-## TypeScript and data structures
-
-I also wanted to avoid treating recurring application data as unstructured objects.
-
-The project therefore included dedicated TypeScript interfaces:
+Recurring data got explicit contracts instead of unstructured objects:
 
 ```text
 src/interfaces/
-├── CTA.ts
-├── FAQ.ts
-├── index.ts
-├── plan.ts
-└── review.ts
+├── CTA.ts   FAQ.ts   plan.ts   review.ts
 ```
 
-These interfaces defined the expected shape of recurring data used throughout the application.
+This gave components typed inputs and kept data structures consistent as the project grew.
 
-This gave the components explicit contracts and helped keep the data structures consistent as the project grew.
+### Content Collections and MDX
 
-It was also an opportunity to practice combining Astro components with TypeScript in a real project rather than only using TypeScript for isolated exercises.
-
-## From static pages to content-driven pages
-
-One of the biggest steps in the project was moving beyond manually created pages.
-
-The academy's existing website included a blog, which gave me a realistic use case for learning Astro's content capabilities.
-
-Instead of creating an individual Astro page for every article, I started storing the content separately and allowing Astro to generate the corresponding pages.
-
-This led to a dedicated content structure:
-
-```text
-src/content/
-├── blog/
-│   ├── images/
-│   │   ├── post-01.avif
-│   │   ├── post-02.avif
-│   │   └── ...
-│   ├── page-01.mdx
-│   ├── page-02.mdx
-│   └── ...
-├── config.ts
-└── legal/
-    ├── about.mdx
-    ├── liability-waiver.mdx
-    ├── privacy-policy.mdx
-    └── terms-and-conditions.mdx
-```
-
-This was one of the most important architectural changes in the project.
-
-## Content Collections
-
-The project used Astro's content system to define and manage structured content.
-
-The `src/content/config.ts` file provided the configuration for the content collections.
-
-This allowed the content to have a predictable structure while keeping it separate from the UI.
-
-The approach provided several benefits:
-
-* Content could be edited without changing page templates.
-* New blog posts could be added without creating new route files.
-* Metadata could be defined alongside the content.
-* Content could be validated against a known structure.
-* The same rendering logic could be reused for multiple entries.
-
-This was an important step in understanding the difference between **content and presentation**.
-
-## MDX-powered blog
-
-The blog content was stored as `.mdx` files rather than being hardcoded directly into Astro pages.
-
-The project used a dynamic route:
+The largest architectural step was moving from manually created pages to content-driven pages. Blog posts and legal documents live as MDX files with frontmatter validated by a Zod schema in `src/content/config.ts`, and dynamic routes generate the pages:
 
 ```text
 src/pages/blog/post/[slug].astro
-```
-
-This route generated the individual blog pages based on the content entries.
-
-The resulting flow was:
-
-```text
-MDX content
-     ↓
-Astro Content Collection
-     ↓
-Dynamic [slug] route
-     ↓
-Static page generation
-     ↓
-HTML delivered to the browser
-```
-
-This meant that adding a new article did not require creating a new Astro page.
-
-The content itself became the source of truth, while the route controlled how that content was presented.
-
-## Legal content
-
-I applied the same concept to the site's legal documentation.
-
-Instead of creating separate hardcoded pages, legal documents were stored as MDX content:
-
-```text
-src/content/legal/
-├── about.mdx
-├── liability-waiver.mdx
-├── privacy-policy.mdx
-└── terms-and-conditions.mdx
-```
-
-They were rendered through a dynamic route:
-
-```text
 src/pages/legal/[slug].astro
 ```
 
-This allowed the same content-driven approach used by the blog to be applied to another part of the website.
-
-It also reinforced the idea that a static website can still have a structured content architecture.
-
-## Image optimization
-
-Performance was one of the reasons I chose Astro in the first place, so I also wanted to pay attention to the assets being delivered to the browser.
-
-The project used **AVIF** for many of its images.
-
-The asset structure included images for:
-
-* Hero sections.
-* Calls to action.
-* Academy pages.
-* Services.
-* Trial classes.
-* Blog posts.
-* Error pages.
-
-For example:
-
 ```text
-src/assets/
-├── 404.avif
-├── cta-academy-1.avif
-├── cta-academy-3.avif
-├── cta-academy-4.avif
-├── cta-index-1.avif
-├── cta-index-2.avif
-├── cta-service-2.avif
-├── cta-trial-1.avif
-├── cta-trial-2.avif
-├── cta-trial-3.avif
-└── hero.avif
+MDX content → Content Collection → [slug] route → static HTML
 ```
 
-Working on the project helped me understand that performance is not only about the framework itself.
+* 7 blog posts in `src/content/blog`, each with an AVIF cover image.
+* 4 legal documents in `src/content/legal` (about, liability waiver, privacy policy, terms and conditions).
 
-Images, JavaScript, CSS, routing, and architecture all contribute to the final experience.
+Adding a post means adding an MDX file — no new route required. Content becomes the source of truth while routes control presentation. The content layer keeps the performance characteristics of static generation while separating content management from presentation.
 
-## Tailwind CSS
+## Performance & Optimization
 
-For styling, I used **Tailwind CSS**.
+Performance shaped several decisions:
 
-Rather than designing every component entirely from scratch, I researched existing Tailwind-based component patterns and used them as references.
+* **Static-first rendering** — most routes are rendered at build time and delivered as static assets, so there is no per-request rendering cost and no server to operate.
+* **Minimal client-side JavaScript** — interactivity was kept to native and vanilla patterns, so the site ships no framework runtime.
+* **AVIF asset pipeline** — I adopted AVIF for suitable images (hero, calls to action, services, trial classes, blog covers, 404 page) and served them through Astro's asset pipeline, reducing image payloads while maintaining visual quality.
+* **Sitemap** — `@astrojs/sitemap` generates `sitemap.xml` from the built routes.
+* **Analytics** — Google Tag Manager is injected once through `src/components/layout/Analytics.astro`.
 
-This allowed me to focus my learning effort on Astro while simultaneously becoming more comfortable with utility-first CSS.
-
-The project eventually developed a reusable visual system around components such as cards, navigation, accordions, calls to action, reviews, and pricing plans.
-
-## PNPM
-
-This was also the project where I started using **PNPM** instead of NPM.
-
-I wanted to learn how an alternative package manager handled dependencies and its shared package store.
-
-Using PNPM throughout the project gave me practical experience with:
-
-* Installing dependencies.
-* Running project scripts.
-* Managing the dependency tree.
-* Working with the PNPM store.
-* Using a `pnpm-lock.yaml` file for reproducible installations.
-
-It became another tool that I later carried into other JavaScript and TypeScript projects.
+Performance is not only about the framework: images, JavaScript, CSS, routing and architecture all contribute to the final experience.
 
 ## Deployment
 
-The project was deployed to **Netlify**.
+The site is deployed to **Netlify**. A `netlify.toml` drives the build:
 
-The repository included a dedicated:
-
-```text
-netlify.toml
+```toml
+[build]
+  command = "npm run build"
+  publish = "dist"
 ```
 
-configuration file, while Astro handled the production build.
+The flow is: source → `astro build` → static output in `dist` → Netlify → production site.
 
-The overall deployment flow was:
+Because the site is statically generated, there was no application server to manage, which made Netlify a natural fit for the architecture.
 
-```text
-Source code
-     ↓
-PNPM
-     ↓
-Astro build
-     ↓
-Static output
-     ↓
-Netlify
-     ↓
-Production website
-```
+## Engineering decisions and challenges
 
-Because the project was primarily statically generated, there was no need to manage a traditional application server for the core website.
+The main challenge was not a single technical problem but evaluating a framework and a new content model in parallel while keeping the result coherent.
 
-This made Netlify a natural fit for the architecture I had chosen.
+Key decisions:
 
-## No generative AI
-
-One distinctive aspect of this project is that it was built **without generative AI assistance**.
-
-At the time, I was deliberately using the project as a learning exercise.
-
-I relied on:
-
-* Course material.
-* Documentation.
-* Research.
-* Experimentation.
-* Debugging.
-* My own implementation.
-
-This meant that the project was not simply about producing a working website.
-
-I wanted to understand why the pieces worked and how they fit together.
-
-That distinction was particularly valuable because the project became the foundation for my later use of Astro in other projects.
-
-## Challenges
-
-The biggest challenge was not any single technical problem.
-
-It was learning several concepts simultaneously while trying to turn them into a coherent application.
-
-I was learning:
-
-* A new web framework.
-* A new content architecture.
-* Static generation.
-* MDX.
-* Content collections.
-* Component-based development.
-* TypeScript data structures.
-* Image optimization.
-* PNPM.
-* Netlify deployment.
-
-The project therefore became an iterative process.
-
-I started with simple static pages, learned more about Astro, and gradually introduced more structured approaches as I understood what the framework could do.
-
-This progression was important because I was not designing the final architecture from day one.
-
-I was discovering it through implementation.
-
-## Project structure
-
-The final project structure reflected that evolution:
-
-```text
-├── README.md
-├── astro.config.mjs
-├── netlify.toml
-├── package.json
-├── pnpm-lock.yaml
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── content/
-│   │   ├── blog/
-│   │   ├── config.ts
-│   │   └── legal/
-│   ├── icons/
-│   ├── interfaces/
-│   ├── layouts/
-│   ├── pages/
-│   ├── styles/
-│   └── utils/
-├── tailwind.config.js
-└── tsconfig.json
-```
-
-The result was a small but structured frontend application rather than a collection of disconnected pages.
-
-## What I learned
-
-### Astro
-
-I gained practical experience with:
-
-* Astro components.
-* Static site generation.
-* Dynamic routes.
-* Layouts.
-* Content collections.
-* MDX.
-* Asset handling.
-* Project configuration.
-* Production builds.
-
-### Content architecture
-
-The project taught me how to separate content from presentation and use structured content as the source for generated pages.
-
-This became one of the most valuable lessons of the project.
-
-### Frontend architecture
-
-I learned how to break a website into:
-
-* Reusable components.
-* Shared layouts.
-* Typed data structures.
-* Content collections.
-* Dynamic routes.
-* Utility functions.
-
-### Web performance
-
-Working with a static-first framework and optimized image formats helped me start thinking about performance as an architectural concern rather than something to optimize only after the application was finished.
-
-### Package management
-
-I gained practical experience with PNPM and its dependency management model.
-
-### Deployment
-
-I learned how straightforward it can be to take a statically generated Astro application and deploy it to a production hosting platform such as Netlify.
+* **Static generation over a dynamic backend.** For a marketing site whose content changes infrequently, build-time rendering was the right trade-off: zero runtime cost and no server to operate, while content stays structured and editable. A real-time content requirement would have pointed toward server-side rendering or a headless CMS.
+* **Iterative architecture.** I started with static pages, then introduced reusable components, typed data structures, and finally a validated content layer. The architecture was discovered through implementation rather than designed up front — adopting a framework by building something real forces decisions about routing, typing, content validation, assets and deployment to be made in context.
+* **Deliberate tooling choices.** Astro, TypeScript, Tailwind, MDX, PNPM and Netlify were evaluated against the requirements of the site — performance, static output, low client-side JS, developer experience, content management and deployability without a traditional server.
+* The project was developed through documentation, research and direct experimentation, without generative AI assistance.
 
 ## Outcome
 
-The project ultimately did not become the official website of the climbing academy.
+The project was never adopted by the academy. It was self-initiated, intended as a realistic alternative I planned to show to the instructors — but I stopped practicing there before presenting it. It is not, and was never meant to be, the academy's production system.
 
-I eventually stopped practicing at the academy, so I never had the opportunity to present the finished project to the instructors or explore whether they wanted to adopt it.
+What it did deliver was a complete, deployed concept:
 
-However, the project achieved its original purpose.
+* 13 routes, including dynamic blog and legal pages.
+* Reusable components and typed data structures.
+* A validated MDX content layer with 7 blog posts and 4 legal documents.
+* An optimized AVIF asset pipeline and a framework-free runtime.
+* Contact form, Google Tag Manager analytics and a custom 404 page, deployed to Netlify.
 
-I set out to learn Astro by building something real, and the result became a complete website concept with:
+More importantly, it validated the static-first, content-driven architecture I have used since.
 
-* Multiple production-style pages.
-* Reusable components.
-* TypeScript interfaces.
-* Static generation.
-* Dynamic routes.
-* MDX-based content.
-* Astro content collections.
-* A structured blog.
-* Dynamic legal pages.
-* Optimized image assets.
-* Responsive styling.
-* Contact functionality.
-* Analytics integration.
-* A custom 404 page.
-* Netlify deployment.
+## What I learned
 
-More importantly, the project gave me a practical foundation for working with Astro and content-driven websites.
+* **Evaluating technology against requirements** — Astro was chosen because it matched the needs of a content-heavy site, not because it was new or popular.
+* **Content vs. presentation** — a typed content layer keeps a static site maintainable: content is edited where it lives, templates render it, and schemas validate it.
+* **Where static architecture fits** — build-time generation is a strong default for content-heavy sites, and the trade-off becomes clear when content needs to change at runtime.
+* **Performance as an architectural concern** — asset formats, image handling and the JavaScript budget were decisions made during design, not cleanups after the fact.
+* **The surrounding tooling** — TypeScript contracts, Tailwind, PNPM and Netlify deployment all became part of my default frontend toolkit.
 
 ## What came next
 
-Climbing Academy became one of the projects that introduced me to Astro as a serious option for content-focused websites.
-
-The knowledge I gained here later influenced the architecture of **Agítalo Suave**, my cocktail-focused blog.
-
-The difference was that, by then, I was no longer learning Astro from scratch.
-
-I was applying the concepts I had already explored:
-
-```text
-Climbing Academy
-       ↓
-Learning Astro
-       ↓
-Static-first architecture
-       ↓
-Components
-       ↓
-Content Collections
-       ↓
-MDX
-       ↓
-Performance optimization
-       ↓
-Netlify deployment
-       ↓
-Agítalo Suave
-```
-
-The project therefore became more than a redesign exercise.
-
-It was the first step in a broader evolution toward building content-driven applications with a strong emphasis on performance and maintainability.
+Climbing Academy became the foundation for **Agítalo Suave** (2026), a content-driven blog built on the same decisions: Astro, static-first rendering, a content architecture, performance optimization and Netlify deployment. By then the focus had shifted from evaluating the framework to the product itself — brand, design, content strategy and a headless CMS.
 
 ## Final thoughts
 
-Climbing Academy started with a simple idea:
+Climbing Academy started with a simple idea: **I thought I could build a better website.**
 
-**I thought I could build a better website.**
-
-What I actually built was a practical learning environment.
-
-Instead of learning Astro through isolated tutorials, I used a real-world scenario to force myself to understand the framework, component architecture, content management, static generation, performance optimization, package management, and deployment.
-
-The project was never officially adopted by the academy, but it succeeded in the way that mattered most at the time:
-
-**it turned a problem I noticed into an opportunity to learn by building.**
-
+What it became was a complete, deployed concept — and the foundation for how I approach content-driven engineering. The academy never adopted it, but that was never the point. It turned a problem I noticed into an opportunity to learn by building, and that is the part that lasted.

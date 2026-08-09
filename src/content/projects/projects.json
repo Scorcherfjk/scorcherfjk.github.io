@@ -51,9 +51,9 @@
   {
     "id": "climbing-academy",
     "title": "Climbing Academy",
-    "description": "A complete marketing site for a climbing academy — courses, membership plans, blog and contact, with a content architecture built to grow.",
+    "description": "A complete marketing site concept for a climbing academy — courses, membership plans, blog and contact, with a content architecture built to grow.",
     "year": 2025,
-    "stack": ["Astro", "SolidJS", "Tailwind CSS", "Netlify"],
+    "stack": ["Astro", "TypeScript", "Tailwind CSS", "MDX", "Netlify"],
     "featured": true,
     "status": "active",
     "links": {
