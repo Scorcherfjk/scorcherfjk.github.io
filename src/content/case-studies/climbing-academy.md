@@ -15,8 +15,8 @@ metrics:
     value: "13"
   - label: "Blog posts"
     value: "7"
-  - label: "Stack"
-    value: "JAMstack"
+  - label: "Runtime framework"
+    value: "0"
   - label: "Project duration"
     value: "2.5 mo"
 links:
