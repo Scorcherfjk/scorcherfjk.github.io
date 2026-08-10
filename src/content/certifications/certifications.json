@@ -29,8 +29,21 @@
     "category": "Database",
     "pdf": "/certifications/mongodb-si-architect.pdf",
     "evaluation": "Architecture case study reviewed by MongoDB",
-    "casePdf": "/certifications/mongodb-si-architect-case.pdf",
-    "scorecard": "/certifications/mongodb-si-architect-TCO-scorecard.xlsx",
+    "documents": [
+      {
+        "title": "Case study (PDF)",
+        "pdf": "/certifications/mongodb-si-architect-case.pdf"
+      },
+      {
+        "title": "TCO scorecard",
+        "pdf": "/certifications/mongodb-si-architect-TCO-scorecard.xlsx"
+      }
+    ],
+    "update": {
+      "title": "GenAI SI Architect",
+      "pdf": "/certifications/mongodb-si-architect-genai.pdf",
+      "date": "2026-08"
+    },
     "skills": ["MongoDB", "Architecture", "Performance", "Security"]
   },
   {

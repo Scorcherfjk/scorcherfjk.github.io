@@ -82,34 +82,42 @@ const { data } = cert;
   </div>
 
   {
-    (data.casePdf || data.scorecard) && (
+    data.update && (
+      <div class="mt-4 flex items-center justify-between gap-3 rounded-md border border-accent/30 bg-accent/5 px-3 py-2.5 text-sm">
+        <a
+          href={data.update.pdf}
+          target="_blank"
+          rel="noreferrer"
+          class="inline-flex items-center gap-1.5 font-medium text-accent transition hover:text-accent-soft"
+        >
+          <Icon name="external-link" class="size-4" />
+          {data.update.title}
+        </a>
+        {
+          data.update.date && (
+            <span class="shrink-0 font-mono text-xs text-muted">
+              {formatMonthYear(data.update.date)}
+            </span>
+          )
+        }
+      </div>
+    )
+  }
+
+  {
+    data.documents && data.documents.length > 0 && (
       <div class="mt-4 flex flex-wrap gap-4 border-t border-border pt-4 text-sm">
-        {
-          data.casePdf && (
-            <a
-              href={data.casePdf}
-              target="_blank"
-              rel="noreferrer"
-              class="inline-flex items-center gap-1.5 text-muted transition hover:text-accent"
-            >
-              <Icon name="external-link" class="size-4" />
-              Case study (PDF)
-            </a>
-          )
-        }
-        {
-          data.scorecard && (
-            <a
-              href={data.scorecard}
-              target="_blank"
-              rel="noreferrer"
-              class="inline-flex items-center gap-1.5 text-muted transition hover:text-accent"
-            >
-              <Icon name="external-link" class="size-4" />
-              TCO scorecard
-            </a>
-          )
-        }
+        {data.documents.map((doc) => (
+          <a
+            href={doc.pdf}
+            target="_blank"
+            rel="noreferrer"
+            class="inline-flex items-center gap-1.5 text-muted transition hover:text-accent"
+          >
+            <Icon name="external-link" class="size-4" />
+            {doc.title}
+          </a>
+        ))}
       </div>
     )
   }
