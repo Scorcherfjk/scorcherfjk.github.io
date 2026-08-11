@@ -6,7 +6,7 @@
       <path d="M60 0H0v60" fill="none" stroke="#28303c" stroke-width="1"/>
     </pattern>
   </defs>
-  <text x="80" y="300" font-family="Inter, system-ui, sans-serif" font-size="72" font-weight="800" fill="#e6e8ec">FJavier De Freitas</text>
-  <text x="82" y="360" font-family="JetBrains Mono, monospace" font-size="30" fill="#f59e0b">Full-Stack Developer &amp; Programming Teacher</text>
-  <text x="82" y="410" font-family="Inter, system-ui, sans-serif" font-size="24" fill="#98a2b0">React · Vue · Node.js · Python · Docker</text>
+  <text x="80" y="280" font-family="Inter, system-ui, sans-serif" font-size="76" font-weight="800" fill="#e6e8ec">FJavier De Freitas</text>
+  <text x="82" y="345" font-family="JetBrains Mono, monospace" font-size="32" fill="#f59e0b">Senior Backend Engineer</text>
+  <text x="82" y="400" font-family="Inter, system-ui, sans-serif" font-size="26" fill="#98a2b0">Node.js · TypeScript · NestJS · AWS · Distributed Systems</text>
 </svg>
