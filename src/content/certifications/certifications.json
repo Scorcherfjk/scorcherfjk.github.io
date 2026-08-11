@@ -54,6 +54,11 @@
     "category": "Database",
     "pdf": "/certifications/mongodb-si-associate.pdf",
     "evaluation": "Technical training and assessment",
+    "update": {
+      "title": "Sales accreditation",
+      "pdf": "/certifications/mongodb-si-associate-sales.pdf",
+      "date": "2026-08"
+    },
     "skills": ["MongoDB", "Deployment", "High Availability"]
   }
 ]
