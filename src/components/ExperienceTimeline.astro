@@ -72,6 +72,18 @@ const sorted = [...entries].sort((a, b) =>
                         </li>
                       ))}
                     </ul>
+
+                    {
+                      client.stack && (
+                        <ul class="mt-4 flex flex-wrap gap-2">
+                          {client.stack.map((tech) => (
+                            <li>
+                              <Badge text={tech} />
+                            </li>
+                          ))}
+                        </ul>
+                      )
+                    }
                   </div>
                 ))}
               </div>

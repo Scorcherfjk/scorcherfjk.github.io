@@ -14,6 +14,7 @@ export const experienceSchema = z.object({
       z.object({
         name: z.string(),
         highlights: z.array(z.string()),
+        stack: z.array(z.string()).optional(),
       }),
     )
     .optional(),

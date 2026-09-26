@@ -53,7 +53,14 @@ export const FOOTER_LINKS = [
 
 export const SKILLS = {
   languages: ["TypeScript", "JavaScript", "Python", "SQL"],
-  frontend: ["React", "Vue.js", "Astro", "Redux", "Tailwind CSS"],
+  frontend: [
+    "React",
+    "Vue.js",
+    "Astro",
+    "Redux",
+    "Tanstack",
+    "Tailwind CSS",
+  ],
   backend: [
     "Node.js",
     "NestJS",
@@ -64,14 +71,32 @@ export const SKILLS = {
     "Serverless",
     "Discord.js",
   ],
-  databases: ["PostgreSQL", "MongoDB", "Redis"],
+  databases: [
+    "PostgreSQL",
+    "MongoDB",
+    "Redis",
+    "DynamoDB",
+    "Aurora",
+    "Couchbase",
+  ],
   aiMl: ["scikit-learn", "NLTK", "NLP", "Claude Code", "OpenCode", "Cursor"],
   content: ["Strapi", "Supabase", "Cloudinary", "Headless CMS", "SEO"],
-  cloud: ["AWS", "GCP", "Azure", "Netlify", "Kafka", "RabbitMQ"],
+  cloud: [
+    "AWS",
+    "GCP",
+    "Azure",
+    "Netlify",
+    "Kafka",
+    "RabbitMQ",
+    "CloudWatch",
+    "AWS IoT",
+  ],
   engineering: [
     "Microservices",
+    "Microfrontends",
     "Event-Driven Architecture",
     "Hexagonal Architecture",
+    "Backend-for-Frontend",
     "Docker",
   ],
 } as const;
