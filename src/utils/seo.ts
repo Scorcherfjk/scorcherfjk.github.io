@@ -1,4 +1,19 @@
-import { NAME, ROLE, SITE_DESCRIPTION } from "../consts";
+import { NAME, ROLE, SITE_DESCRIPTION, SKILLS } from "../consts";
+
+const ALTERNATE_NAMES = [
+  "Senior Full Stack Developer",
+  "Senior Backend Engineer",
+  "Full Stack Engineer",
+];
+
+const KNOWS_ABOUT = [
+  ...SKILLS.languages,
+  ...SKILLS.frontend,
+  ...SKILLS.backend,
+  ...SKILLS.databases,
+  ...SKILLS.engineering,
+  ...SKILLS.cloud,
+];
 
 export function getPersonJsonLd(site: URL): string {
   const jsonLd = {
@@ -6,7 +21,9 @@ export function getPersonJsonLd(site: URL): string {
     "@type": "Person",
     name: NAME,
     jobTitle: ROLE,
+    alternateName: ALTERNATE_NAMES,
     description: SITE_DESCRIPTION,
+    knowsAbout: KNOWS_ABOUT,
     url: site.origin,
     sameAs: [
       "https://github.com/scorcherfjk",

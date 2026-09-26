@@ -7,6 +7,6 @@
     </pattern>
   </defs>
   <text x="80" y="280" font-family="Inter, system-ui, sans-serif" font-size="76" font-weight="800" fill="#e6e8ec">FJavier De Freitas</text>
-  <text x="82" y="345" font-family="JetBrains Mono, monospace" font-size="32" fill="#f59e0b">Senior Backend Engineer</text>
-  <text x="82" y="400" font-family="Inter, system-ui, sans-serif" font-size="26" fill="#98a2b0">Node.js · TypeScript · NestJS · AWS · Distributed Systems</text>
+  <text x="82" y="345" font-family="JetBrains Mono, monospace" font-size="32" fill="#f59e0b">Senior Full Stack Engineer</text>
+  <text x="82" y="400" font-family="Inter, system-ui, sans-serif" font-size="26" fill="#98a2b0">Node.js · TypeScript · React · NestJS · AWS · Distributed Systems</text>
 </svg>

@@ -1,6 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
-import { FOOTER_LINKS, LINKEDIN_URL, NAME, SOCIAL_LINKS } from "../../consts";
+import { FOOTER_LINKS, LINKEDIN_URL, NAME, SITE_DESCRIPTION, SOCIAL_LINKS } from "../../consts";
 
 const year = new Date().getFullYear();
 ---
@@ -15,8 +15,7 @@ const year = new Date().getFullYear();
           {NAME}
         </p>
         <p class="mt-2 max-w-sm text-sm leading-relaxed text-muted">
-          Senior backend engineer building scalable distributed systems and
-          cloud-native applications with Node.js and TypeScript.
+          {SITE_DESCRIPTION}
         </p>
         <ul class="mt-6 flex gap-4">
           {
