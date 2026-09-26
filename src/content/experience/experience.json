@@ -72,6 +72,7 @@
         "name": "Disney Parks",
         "highlights": [
           "Developed and refactored scalable backend services and internal enterprise platforms using Node.js, NestJS, and Vue.js, applying scalable architecture and software engineering best practices.",
+          "Integrated OpenTelemetry across the platform's services, adding distributed tracing and instrumentation so production issues could be traced and debugged end to end.",
           "Worked extensively with MongoDB — designing indexes and tuning queries to optimize performance across the application's data access patterns.",
           "Implemented MongoDB Event Streams integrations, streaming database change events into downstream consumers.",
           "Built local database synchronization for the mobile application using MongoDB Realm and Couchbase, keeping offline client data in sync with the server.",
@@ -84,6 +85,7 @@
           "MongoDB",
           "MongoDB Realm",
           "Couchbase",
+          "OpenTelemetry",
           "Node.js",
           "NestJS",
           "Vue.js"

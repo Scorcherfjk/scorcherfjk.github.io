@@ -1,6 +1,6 @@
 export const SITE_TITLE = "Francisco Javier De Freitas";
 export const SITE_DESCRIPTION =
-  "Senior Full Stack Engineer with 9+ years building scalable distributed systems and cloud-native applications end to end with Node.js, TypeScript and React.";
+  "Senior Full Stack Engineer with 9+ years building scalable distributed systems, cloud-native applications and machine learning services with Node.js, TypeScript, React and Python.";
 
 export const NAME = "Francisco Javier De Freitas";
 export const SHORT_NAME = "Francisco J. De Freitas";
