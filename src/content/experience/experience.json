@@ -40,11 +40,11 @@
       {
         "name": "Command Alkon",
         "highlights": [
-          "Maintained a multi-repository React application implemented as microfrontends, using React Query to coordinate data across independently deployed frontend modules.",
+          "Maintained a multi-repository React application implemented as microfrontends, wiring React Query to coordinate data across independently deployed frontend modules.",
           "Designed backend services and Backend-for-Frontend (BFF) layers hosted in the frontend repositories, keeping data aggregation close to the consuming modules and the connection direct.",
           "Integrated AWS IoT pub/sub to deliver real-time updates to the frontend, complementing the React Query data layer with event-driven messaging.",
           "Integrated application data across DynamoDB and Aurora, supporting the persistence layer of the microservices application.",
-          "Owned production troubleshooting and observability with CloudWatch and Logz.io, tracing and resolving issues across distributed services.",
+          "Debugged production issues across distributed services with CloudWatch and Logz.io, tracing each failure to its root cause and documenting the findings in RCAs.",
           "Introduced an ADR (Architectural Decision Record) framework and led architecture spikes to evaluate third-party solutions, standardizing technical decision-making and engineering documentation across teams.",
           "Designed and executed idempotent large-scale production migration scripts for critical business data with zero downtime impact.",
           "Mentored engineers on SOLID principles, design patterns, and Hexagonal Architecture, improving code maintainability and team autonomy.",
@@ -76,7 +76,7 @@
           "Worked extensively with MongoDB — designing indexes and tuning queries to optimize performance across the application's data access patterns.",
           "Implemented MongoDB Event Streams integrations, streaming database change events into downstream consumers.",
           "Built local database synchronization for the mobile application using MongoDB Realm and Couchbase, keeping offline client data in sync with the server.",
-          "Contributed to a Server-Driven UI ecosystem powering dynamic user experiences across enterprise applications.",
+          "Developed components for a Server-Driven UI ecosystem that powers dynamic user experiences across enterprise applications.",
           "Built reusable engineering tooling and Yeoman generators to streamline development workflows.",
           "Conducted technical interviews and contributed to engineering hiring decisions across multiple teams.",
           "Coordinated distributed engineering efforts across multiple countries, supporting mentoring and delivery alignment."
