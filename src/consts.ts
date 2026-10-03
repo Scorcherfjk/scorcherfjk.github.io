@@ -79,7 +79,17 @@ export const SKILLS = {
     "Aurora",
     "Couchbase",
   ],
-  aiMl: ["scikit-learn", "NLTK", "NLP", "Claude Code", "OpenCode", "Cursor"],
+  aiMl: [
+    "LangChain",
+    "LangGraph",
+    "MCP Python SDK",
+    "scikit-learn",
+    "NLTK",
+    "NLP",
+    "Claude Code",
+    "OpenCode",
+    "Cursor",
+  ],
   content: ["Strapi", "Supabase", "Cloudinary", "Headless CMS", "SEO"],
   cloud: [
     "AWS",
