@@ -116,22 +116,32 @@
     "startDate": "2021-04",
     "endDate": "2022-05",
     "current": false,
-    "summary": "Built cloud-native microservices and distributed systems, integrating event-driven pipelines across SQL and NoSQL data stores.",
+    "summary": "Migrated a monolithic chatbot platform to a cloud-native microservices architecture, designing the data model and event-driven pipelines while extending chatbot capabilities on IBM Watson and IBM Cloud.",
     "highlights": [
-      "Developed cloud-native microservices and distributed systems using Node.js and Docker.",
-      "Built integrations with SQL and NoSQL databases, including PostgreSQL, MongoDB, and Redis.",
-      "Implemented event-driven communication pipelines using Kafka and RabbitMQ.",
-      "Deployed and managed services across Azure, GCP, and IBM Cloud environments."
+      "Developed and extended IBM Watson chatbot solutions, configuring conversational flows on IBM Cloud.",
+      "Migrated a monolithic chatbot platform to a cloud-native microservices architecture using NestJS and TypeScript.",
+      "Designed database schemas and implemented persistence with PostgreSQL, TypeORM, migrations, and MongoDB for unstructured data.",
+      "Implemented Kafka for inter-service event-driven communication and RabbitMQ for routing chatbot users to human support agents.",
+      "Implemented Redis-based idempotency controls for Kafka message processing to prevent duplicate processing across distributed services.",
+      "Rebuilt a web dashboard using React to present statistical analysis and forecasting data, improving data visualization and the accessibility of analytical insights.",
+      "Deployed and managed services across IBM Cloud, Azure, and GCP, using Docker."
     ],
     "stack": [
+      "NestJS",
+      "TypeScript",
+      "React",
       "Node.js",
-      "Docker",
       "PostgreSQL",
+      "TypeORM",
       "MongoDB",
       "Redis",
       "Kafka",
       "RabbitMQ",
-      "GCP"
+      "Docker",
+      "IBM Watson",
+      "IBM Cloud",
+      "GCP",
+      "Azure"
     ]
   },
   {
