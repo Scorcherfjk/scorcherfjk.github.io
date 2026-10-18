@@ -128,20 +128,14 @@
     ],
     "stack": [
       "NestJS",
-      "TypeScript",
       "React",
-      "Node.js",
       "PostgreSQL",
-      "TypeORM",
       "MongoDB",
       "Redis",
       "Kafka",
       "RabbitMQ",
       "Docker",
-      "IBM Watson",
-      "IBM Cloud",
-      "GCP",
-      "Azure"
+      "IBM Cloud"
     ]
   },
   {
