@@ -9,11 +9,24 @@ interface Props {
 
 const { project } = Astro.props;
 const { data } = project;
+
+const caseStudyHref = data.links?.caseStudy
+  ? `/case-studies/${data.links.caseStudy}`
+  : undefined;
 ---
 
 <article
-  class="group flex flex-col rounded-lg border border-border bg-surface p-6 transition hover:-translate-y-0.5 hover:border-accent/60 hover:shadow-lg hover:shadow-black/10"
+  class="group relative flex flex-col rounded-lg border border-border bg-surface p-6 transition hover:-translate-y-0.5 hover:border-accent/60 hover:shadow-lg hover:shadow-black/10"
 >
+  {
+    caseStudyHref && (
+      <a
+        href={caseStudyHref}
+        class="absolute inset-0 rounded-lg"
+        aria-label={`Read the case study for ${data.title}`}
+      />
+    )
+  }
   <div class="flex items-start justify-between gap-4">
     <h3 class="text-xl font-bold tracking-tight text-primary">
       {data.title}
@@ -40,7 +53,7 @@ const { data } = project;
       data.links?.caseStudy && (
         <a
           href={`/case-studies/${data.links.caseStudy}`}
-          class="inline-flex items-center gap-1.5 font-semibold text-accent transition hover:text-accent-soft"
+          class="relative z-10 inline-flex items-center gap-1.5 font-semibold text-accent transition hover:text-accent-soft"
         >
           Case study
           <Icon name="arrow-right" class="size-4" />
@@ -53,7 +66,7 @@ const { data } = project;
           href={data.links.demo}
           target="_blank"
           rel="noreferrer"
-          class="inline-flex items-center gap-1.5 text-muted transition hover:text-accent"
+          class="relative z-10 inline-flex items-center gap-1.5 text-muted transition hover:text-accent"
         >
           <Icon name="external-link" class="size-4" />
           Live demo
@@ -69,7 +82,7 @@ const { data } = project;
                 href={repo.url}
                 target="_blank"
                 rel="noreferrer"
-                class="inline-flex items-center gap-1.5 text-muted transition hover:text-accent"
+                class="relative z-10 inline-flex items-center gap-1.5 text-muted transition hover:text-accent"
               >
                 <Icon name="github" class="size-4" />
                 {repo.label}
@@ -85,7 +98,7 @@ const { data } = project;
           href={data.links.repo}
           target="_blank"
           rel="noreferrer"
-          class="inline-flex items-center gap-1.5 text-muted transition hover:text-accent"
+          class="relative z-10 inline-flex items-center gap-1.5 text-muted transition hover:text-accent"
         >
           <Icon name="github" class="size-4" />
           Code

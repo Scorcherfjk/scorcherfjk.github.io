@@ -22,7 +22,7 @@ const action = data.credentialUrl
 
 {
   isSpecialization ? (
-    <article class="flex flex-col rounded-lg border border-border bg-surface p-6 transition hover:-translate-y-0.5 hover:border-accent/60 hover:shadow-lg hover:shadow-black/10">
+    <article class="flex flex-col rounded-lg border border-border bg-surface p-6 hover:border-accent/60">
       <div class="flex items-start justify-between gap-3">
         <span class="grid size-10 place-items-center rounded-md bg-surface-alt">
           <Icon name="server" class="size-5 text-accent-soft" />
@@ -76,7 +76,7 @@ const action = data.credentialUrl
       </div>
     </article>
   ) : (
-    <article class="flex flex-col rounded-lg border border-border bg-surface p-4 transition hover:-translate-y-0.5 hover:border-accent/60 hover:shadow-lg hover:shadow-black/10">
+    <article class="flex flex-col rounded-lg border border-border bg-surface p-4 hover:border-accent/60">
       <div class="flex items-start justify-between gap-3">
         <h3 class="text-base font-semibold tracking-tight text-primary">
           {data.title}
