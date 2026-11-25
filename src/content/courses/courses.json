@@ -82,13 +82,35 @@
     "title": "Curso de MCP: Conecta LLMs y Agentes de IA con Apps Externas",
     "provider": "Udemy",
     "type": "Course",
-    "skills": ["Model Context Protocol", "LLMs", "AI Agents"]
+    "pdf": "/courses/udemy-certificate-mcp.pdf",
+    "skills": ["Model Context Protocol", "LLMs", "AI Agents"],
+    "date": "2026-04"
+  },
+  {
+    "id": "udemy-langchain-langgraph-agents",
+    "title": "Curso Completo: LangChain, LangGraph y Agentes IA con Python",
+    "provider": "Udemy",
+    "type": "Course",
+    "pdf": "/courses/udemy-certificate-langchain.pdf",
+    "skills": ["LangChain", "LangGraph", "AI Agents"],
+    "date": "2026-11"
+  },
+  {
+    "id": "udemy-spec-driven-development-sdd",
+    "title": "Curso Completo de Spec Driven Development (SDD) y Agentes IA",
+    "provider": "Udemy",
+    "type": "Course",
+    "pdf": "/courses/udemy-certificate-sdd.pdf",
+    "skills": ["Spec-Driven Development", "AI Agents", "LLMs"],
+    "date": "2026-10"
   },
   {
     "id": "udemy-docker-practical-guide",
     "title": "Docker - Guía práctica de uso para desarrolladores",
     "provider": "Udemy",
     "type": "Course",
-    "skills": ["Docker", "Containers", "DevOps"]
+    "pdf": "/courses/udemy-certificate-docker.pdf",
+    "skills": ["Docker", "Containers", "DevOps"],
+    "date": "2026-04"
   }
 ]
